@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.navone{
+    padding: 20px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.navul{
+    display: flex;
+    list-style: none;
+    margin: 0 auto 0 auto;
+    gap: 50px;
+}
+
+.navli{
+    cursor: pointer;
+}
+
+.samph{
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.samphones{
+    border: 1px solid rgb(153, 151, 151);
+    height: 200px;
+    min-width: 150px;
+}
+
+.secnames{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.appphones{
+    border: 1px solid rgb(153, 151, 151);
+    height: 200px;
+    min-width: 150px;
+}
+
+.appph{
+    padding: 30px;
+    width: 100%;
+    
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.view{
+    text-align: right;
+    padding: 0px 10px 10px 10px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.samsec{
+    border: 1px solid rgb(78, 78, 78);
+}
+
+.appsec{
+    border: 1px solid rgb(78, 78, 78);
+}
+
+.samicon{
+    color: green;
+}
+
+.samfullsec{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid grey;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.appfullsec{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid grey;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navhref{
+    text-decoration: none;
+    color: white;
+}
+
+.prdt{
+    margin: 50px auto;
+    width: 1000px;
+    padding: 30px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inpo{
+    width: 100%;
+    height: 20px;
+}
+
+.inpi{
+    height: 40px;
+}
+
+.entpd{
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+
+.picform{
+    display: flex;
+    flex-direction: column;
+}
+
+.subbut{
+    padding: 20px;
+    margin: 0 290px 0 290px;
+}
+
+.cartsec{
+    border: solid 1px grey;
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    padding: 50px;
+}
