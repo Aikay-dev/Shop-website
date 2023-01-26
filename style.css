@@ -68,11 +68,13 @@
 }
 
 .samsec{
-    border: 1px solid rgb(78, 78, 78);
+    border-top: 1px solid rgb(78, 78, 78);
+    border-bottom: 1px solid rgb(78, 78, 78);
 }
 
 .appsec{
-    border: 1px solid rgb(78, 78, 78);
+    border-top: 1px solid rgb(78, 78, 78);
+    border-bottom: 1px solid rgb(78, 78, 78);
 }
 
 .samicon{
