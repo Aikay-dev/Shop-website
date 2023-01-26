@@ -11,6 +11,8 @@
     background-color: black;
     color: white;
     display: flex;
+    z-index: 6;
+    position: absolute;
 }
 
 .navul{
@@ -24,6 +26,37 @@
     cursor: pointer;
 }
 
+.confirm{
+    padding: 20px;
+    background-color: green;
+    color: white;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.confirmout{
+    padding: 20px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown{
+    animation: cartadded 3s ease-in-out forwards;
+}
+
+
 .samph{
     padding: 30px;
     width: 100%;
@@ -34,8 +67,12 @@
 
 .samphones{
     border: 1px solid rgb(153, 151, 151);
-    height: 200px;
-    min-width: 150px;
+    height: 300px;
+    min-width: 230px;
+    max-width: 230px;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
 .secnames{
@@ -65,7 +102,19 @@
     padding: 0px 10px 10px 10px;
     cursor: pointer;
     text-decoration: underline;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
+.viewh{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
 
 .samsec{
     border-top: 1px solid rgb(78, 78, 78);
@@ -157,4 +206,55 @@
     padding: 30px;
     background-color: black;
     color: white;
+}
+
+.samphones>img{
+    position: relative;
+    height: 80%;
+    width: 100%;
+    
+}
+
+.price{
+    font-weight: bolder;
+}
+
+.addcart{
+    text-align: right;
+    background-color: gray;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 0px 0 85%;
+    cursor: pointer;
+}
+
+.addcart:hover{
+    background-color: green;
+}
+
+.green{
+    background-color: green;
+}
+
+
+@keyframes cartadded {
+    0%{
+        top : 0%
+    }
+
+    50%{
+        top: 20%;
+    }
+
+    70%{
+        top: 20%;
+    }
+
+    100%{
+        top: 0%;
+    }
 }
