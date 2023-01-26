@@ -141,9 +141,20 @@
     margin: 0 290px 0 290px;
 }
 
+.subbut:focus{
+    margin: rgb(90, 89, 89);
+}
+
 .cartsec{
     border: solid 1px grey;
     width: 1000px;
     margin: 0 auto 0 auto;
     padding: 50px;
+    
+}
+
+.foot{
+    padding: 30px;
+    background-color: black;
+    color: white;
 }
