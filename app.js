@@ -129,7 +129,6 @@ const MAINSTORAGE = [
 /* IPHONE RANDOMIZER */
 
 const iphone = MAINSTORAGE[0];
-console.log(iphone.length);
 
 function shuffleArray(iphone) {
   let n = iphone.length;
@@ -172,5 +171,3 @@ function* randomChoice(galaxyphones) {
 for (let element of randomChoice(galaxyphones)) {
   document.querySelector(".samph").innerHTML += element;
 }
-
-console.log(MAINSTORAGE[0]);
