@@ -1,4 +1,4 @@
-const storage = [[samsung = [`<div class="samphones">
+const storage = [`<div class="samphones">
 <img src="./galaxy a10.avif" alt="" class="insidepic">
 <div class="prdet">
     <p>Samsung galaxy a10</p>
@@ -43,52 +43,7 @@ const storage = [[samsung = [`<div class="samphones">
     </p>
     <p class="addcart" ><i class="fa-solid fa-cart-plus"></i></p>
 </div>
-</div>`]], [apple = [`<div class="appphones">
-<img src="./apple-iphone-14-pro-max-1.jpg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 14 pro max</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`, `<div class="appphones">
-<img src="./iphone-13-2022-gallery-2_GEO_US-scaled.jpeg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 13 Mini</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`, `<div class="appphones">
-<img src="./iphone-13-pro-max-web.webp" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 13 pro</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`, `<div class="appphones">
-<img src="./iphone12.jpeg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 12 mini</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`, `<div class="appphones">
-<img src="./iphone11.webp" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 12 pro max</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart" ><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`]]]
+</div>`]
 
 
     function shuffleArray(storage) {
@@ -111,7 +66,7 @@ const storage = [[samsung = [`<div class="samphones">
     }
 
 
-const appstorage = [[apple = [`<div class="appphones">
+const appstorage = [`<div class="appphones">
 <img src="./apple-iphone-14-pro-max-1.jpg" alt="" class="insidepic">
 <div class="prdet">
     <p>Iphone 14 pro max</p>
@@ -156,10 +111,7 @@ const appstorage = [[apple = [`<div class="appphones">
     </p>
     <p class="addcart" ><i class="fa-solid fa-cart-plus"></i></p>
 </div>
-</div>`]]]
-
-let iphones = storage.find(iphones)
-console.log(iphones)
+</div>`]
 
 function shuffleArrayapp(appstorage) {
     let n = appstorage.length;
