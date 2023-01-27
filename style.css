@@ -75,6 +75,10 @@
     padding-bottom: 20px;
 }
 
+.faker{
+    height: 60px;
+}
+
 .secnames{
     text-align: center;
     font-weight: bolder;
@@ -84,14 +88,17 @@
 
 .appphones{
     border: 1px solid rgb(153, 151, 151);
-    height: 200px;
-    min-width: 150px;
+    height: 300px;
+    min-width: 230px;
+    max-width: 230px;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
 .appph{
     padding: 30px;
-    width: 100%;
-    
+    width: 100%;  
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -156,7 +163,7 @@
 }
 
 .prdt{
-    margin: 50px auto;
+    margin: 0px auto;
     width: 1000px;
     padding: 30px;
     border: solid 1px grey;
@@ -208,7 +215,7 @@
     color: white;
 }
 
-.samphones>img{
+.appphones>img, .samphones>img{
     position: relative;
     height: 80%;
     width: 100%;
