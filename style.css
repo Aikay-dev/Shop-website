@@ -5,6 +5,10 @@
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+body{
+    background-color: rgb(228, 228, 228);
+}
+
 .navone{
     padding: 20px;
     width: 100%;
@@ -65,18 +69,8 @@
     justify-content: center;
 }
 
-.samphones{
-    border: 1px solid rgb(153, 151, 151);
-    height: 300px;
-    min-width: 230px;
-    max-width: 230px;
-    position: relative;
-    padding: 10px;
-    padding-bottom: 20px;
-}
-
 .faker{
-    height: 60px;
+    height: 57px;
 }
 
 .secnames{
@@ -94,6 +88,22 @@
     position: relative;
     padding: 10px;
     padding-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.appphones:hover{
+    animation: cards 0.1s ease-in-out forwards;
+}
+
+.iphnbanhol{
+    background-color: black;
+}
+
+
+
+.fullbanholder{
+    background-color: rgb(20,40,160);
 }
 
 .appph{
@@ -251,6 +261,14 @@
 
 .green{
     background-color: green;
+}
+
+.sambanner{
+    background-color: rgb(209,236,255);
+}
+
+.appbann{
+    background-color: rgb(84,59,92);
 }
 
 

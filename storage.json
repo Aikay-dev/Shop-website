@@ -2,9 +2,15 @@
     "iphones" : [
         ["apple-iphone-14-pro-max-1.jpg", "Iphone 14 pro max", "1200"],
         ["iphone-13-2022-gallery-2_GEO_US-scaled.jpeg", "Iphone 13 Mini", "1344"],
+        ["iphone8-plus.jpg", "Iphone 8 plus", "7865"],
         ["iphone-13-pro-max-web.webp", "Iphone 13 pro", "1233"],
         ["iphone12.jpeg", "Iphone 12 mini", "9322"],
-        ["i11.webp", "Iphone 11 pro max", "1239"]
+        ["i11.webp", "Iphone 11 pro max", "1239"],
+        ["iPhoneX-silver-1.jpg", "Iphone 11 pro max", "1239"],   
+        ["iphone-6-main.webp", "Iphone 6", "5919"],
+        ["iphone 7 black.jpg", "Iphone 7 black", "5239"],
+        ["iphone 7 gold.jpg", "Iphone 7 gold", "4239"],
+        ["iphone 7 red.jpg", "Iphone 7 red", "3239"]
     ],
 
     "samsung" : [
@@ -12,6 +18,12 @@
         ["a04.avif", "Galaxy a04", "3122"],
         ["a33.avif", "Samsung a33", "7656"],
         ["galacy s22.jpg", "Samsung galaxy S22", "1221"],
-        ["a50.jpg", "Samsung galaxy a50", "1398"]
+        ["a50.jpg", "Samsung galaxy a50", "1398"],
+        ["samsunga01.jpg", "Samsung galaxy a50", "1398"],
+        ["samsung-galaxy-s10-5g.webp", "Samsung galaxy a50", "1398"],
+        ["Samsung-Galaxy-M01s-Price-in-Malawi.jpg", "Samsung galaxy a50", "1398"],
+        ["samsung note 4.jpg", "Samsung galaxy a50", "1398"],
+        ["a50.jpg", "Samsung galaxy a50", "1398"],
+        ["galaxy fold.jpg", "Samsung galaxy a50", "1398"]
     ]
 }
