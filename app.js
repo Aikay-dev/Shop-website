@@ -1,6 +1,7 @@
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
+    
     /* Reading iphones from json */
     let iphonestore = [];
 
@@ -98,6 +99,9 @@ fetch("./storage.json")
         }
       });
     });
+
+
+
   })
 
   .catch((error) => {
