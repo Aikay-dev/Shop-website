@@ -1,0 +1,17 @@
+{
+    "iphones" : [
+        ["apple-iphone-14-pro-max-1.jpg", "Iphone 14 pro max", "1200"],
+        ["iphone-13-2022-gallery-2_GEO_US-scaled.jpeg", "Iphone 13 Mini", "1344"],
+        ["iphone-13-pro-max-web.webp", "Iphone 13 pro", "1233"],
+        ["iphone12.jpeg", "Iphone 12 mini", "9322"],
+        ["i11.webp", "Iphone 11 pro max", "1239"]
+    ],
+
+    "samsung" : [
+        ["a.avif", "Samsung galaxy a10", "2111"],
+        ["a04.avif", "Galaxy a04", "3122"],
+        ["a33.avif", "Samsung a33", "7656"],
+        ["galacy s22.jpg", "Samsung galaxy S22", "1221"],
+        ["a50.jpg", "Samsung galaxy a50", "1398"]
+    ]
+}

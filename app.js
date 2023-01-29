@@ -1,174 +1,98 @@
-/* phone storage */
+fetch("./storage.json")
+  .then((response) => response.json())
+  .then((data) => {
+    /* Reading iphones from json */
+    let iphonestore = [];
 
-const MAINSTORAGE = [
-  (iphones = [
-    `<div class="appphones">
-<img src="./apple-iphone-14-pro-max-1.jpg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 14 pro max</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="appphones">
-<img src="./iphone-13-2022-gallery-2_GEO_US-scaled.jpeg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 13 Mini</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="appphones">
-<img src="./iphone-13-pro-max-web.webp" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 13 pro</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="appphones">
-<img src="./iphone12.jpeg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 12 mini</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="appphones">
-<img src="./iphone11.webp" alt="" class="insidepic">
-<div class="prdet">
-    <p>Iphone 12 pro max</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart" ><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-  ]),
-  (samsung = [
-    `<div class="samphones">
-<img src="./galaxy a10.avif" alt="" class="insidepic">
-<div class="prdet">
-    <p>Samsung galaxy a10</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="samphones">
-<img src="./galaxy a04.avif" alt="" class="insidepic">
-<div class="prdet">
-    <p>Galaxy a04</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="samphones">
-<img src="./galaxy a33.avif" alt="" class="insidepic">
-<div class="prdet">
-    <p>Samsung a33</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="samphones">
-<img src="./galacy s22.jpg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Samsung galaxy S22</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-    `<div class="samphones">
-<img src="./a50.jpg" alt="" class="insidepic">
-<div class="prdet">
-    <p>Samsung galaxy a50</p>
-    <p class="price">
-        <span>₦</span><span class="money">1200</span>
-    </p>
-    <p class="addcart" ><i class="fa-solid fa-cart-plus"></i></p>
-</div>
-</div>`,
-  ]),
-];
-
-/* IPHONE RANDOMIZER */
-
-const iphone = MAINSTORAGE[0];
-
-function shuffleArray(iphone) {
-  let n = iphone.length;
-  for (let i = n - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [iphone[i], iphone[j]] = [iphone[j], iphone[i]];
-  }
-  return iphone;
-}
-function* randomChoice(iphone) {
-  let shuffledArr = shuffleArray(iphone);
-  for (let element of shuffledArr) {
-    yield element;
-  }
-}
-
-for (let element of randomChoice(iphone)) {
-  document.querySelector(".appph").innerHTML += element;
-}
-
-/* SAMSUNG RANDOMIZER */
-
-const galaxyphones = MAINSTORAGE[1];
-
-function shuffleArray(galaxyphones) {
-  let n = galaxyphones.length;
-  for (let i = n - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [galaxyphones[i], galaxyphones[j]] = [galaxyphones[j], galaxyphones[i]];
-  }
-  return galaxyphones;
-}
-function* randomChoice(galaxyphones) {
-  let shuffledArr = shuffleArray(galaxyphones);
-  for (let element of shuffledArr) {
-    yield element;
-  }
-}
-
-for (let element of randomChoice(galaxyphones)) {
-  document.querySelector(".samph").innerHTML += element;
-}
-
-
-const cartbut = document.querySelectorAll(".addcart");
-let arrconv = Array.from(cartbut);
-arrconv.forEach(function (elem) {
-  elem.addEventListener("click", async function () {
-    this.classList.toggle("green");
-    if (this.classList.contains("green")) {
-      let red = document.querySelector(".confirm");
-      red.classList.toggle("dropdown");
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      red.classList.toggle("dropdown");
-    } else {
-      let green = document.querySelector(".confirmout");
-      green.classList.toggle("dropdown");
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      green.classList.toggle("dropdown");
+    for (let i = 0; i < data.iphones.length; i++) {
+      iphonestore.push(data.iphones[i]);
     }
+
+    /* RANDOMIZING THE IPHONE STORAGE */
+
+    function fisherYatesShuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    let shuffiphone = fisherYatesShuffle(iphonestore);
+
+    for (let i = 0; i < iphonestore.length; i++) {
+      let appimage = iphonestore[i][0];
+      let appname = iphonestore[i][1];
+      let appprice = iphonestore[i][2];
+
+      let boiler = `<div class="appphones">
+      <img src="./${appimage}">
+      <div class="prdet">
+          <p>${appname}</p>
+          <p class="price">
+              <span>₦</span><span class="money">${appprice}</span>
+          </p>
+          <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
+      </div>
+      </div>`;
+
+      document.querySelector(".appph").innerHTML += boiler;
+    }
+
+    /* Reading samsung from json */
+
+    let samsungstore = [];
+    for (let i = 0; i < data.samsung.length; i++) {
+      samsungstore.push(data.samsung[i]);
+    }
+
+    function fisherYatesShuffleb(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    let shuffisamsung = fisherYatesShuffleb(samsungstore);
+
+    for (let i = 0; i < samsungstore.length; i++) {
+      let appimage = samsungstore[i][0];
+      let appname = samsungstore[i][1];
+      let appprice = samsungstore[i][2];
+
+      let boiler = `<div class="appphones">
+      <img src="./${appimage}">
+      <div class="prdet">
+          <p>${appname}</p>
+          <p class="price">
+              <span>₦</span><span class="money">${appprice}</span>
+          </p>
+          <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
+      </div>
+      </div>`;
+
+      document.querySelector(".samph").innerHTML += boiler;
+    }
+
+    const cartbut = document.querySelectorAll(".addcart");
+    let arrconv = Array.from(cartbut);
+    arrconv.forEach(function (elem) {
+      elem.addEventListener("click", async function () {
+        this.classList.toggle("green");
+        if (this.classList.contains("green")) {
+          let red = document.querySelector(".confirm");
+          red.classList.toggle("dropdown");
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          red.classList.toggle("dropdown");
+        } else {
+          let green = document.querySelector(".confirmout");
+          green.classList.toggle("dropdown");
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          green.classList.toggle("dropdown");
+        }
+      });
+    });
+  })
+
+  .catch((error) => {
+    console.error("Error:", error);
   });
-});
