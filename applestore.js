@@ -40,7 +40,7 @@ fetch("./storage.json")
           <p class="price">
               <span>₦</span><span class="money">${appprice}</span>
           </p>
-          <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
+          <p class="addcart">ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
       </div>
       </div>`;
 
