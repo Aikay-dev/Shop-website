@@ -1,14 +1,8 @@
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
-    
     /* Reading iphones from json */
     let iphonestore = [];
-
-    /* save to use later */
-/*     for (let i = 0; i < data.iphones.length; i++) {
-      iphonestore.push(data.iphones[i]);
-    } */
 
     for (let i = 0; i < 5; i++) {
       iphonestore.push(data.iphones[i]);
@@ -79,8 +73,6 @@ fetch("./storage.json")
       document.querySelector(".samph").innerHTML += boiler;
     }
 
-    
-
     const cartbut = document.querySelectorAll(".addcart");
     let arrconv = Array.from(cartbut);
     arrconv.forEach(function (elem) {
@@ -99,9 +91,6 @@ fetch("./storage.json")
         }
       });
     });
-
-
-
   })
 
   .catch((error) => {

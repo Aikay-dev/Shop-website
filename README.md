@@ -10,3 +10,16 @@ The various baranches in this project include;
 3. QUICK-FIXES branch: this branch is used to squash bugs quickly and push them to the main branch if the bugs are successfully fixed and verified
 
 4. FEATURE branch: This branch is for adding new features to the project, if a feature is added and tested, it gets pushed to the temp branch adn awiats further processing
+
+
+<h2 style = "text-align: center; color : green">ROAD MAP</h2>
+
+1. better cart button
+
+2. add description usage
+
+3. add better category picking
+
+4. add cart page and function
+
+5. add user login function

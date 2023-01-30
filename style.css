@@ -1,291 +1,283 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-body{
-    background-color: rgb(228, 228, 228);
+body {
+  background-color: rgb(228, 228, 228);
 }
 
-.navone{
-    padding: 20px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    display: flex;
-    z-index: 6;
-    position: absolute;
+.navone {
+  padding: 20px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  z-index: 6;
+  position: absolute;
 }
 
-.navul{
-    display: flex;
-    list-style: none;
-    margin: 0 auto 0 auto;
-    gap: 50px;
+.navul {
+  display: flex;
+  list-style: none;
+  margin: 0 auto 0 auto;
+  gap: 50px;
 }
 
-.navli{
-    cursor: pointer;
+.navli {
+  cursor: pointer;
 }
 
-.confirm{
-    padding: 20px;
-    background-color: green;
-    color: white;
-    width: 200px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
-    border-radius: 10px;
+.confirm {
+  padding: 20px;
+  background-color: green;
+  color: white;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px;
 }
 
-.confirmout{
-    padding: 20px;
-    background-color: rgb(255, 0, 0);
-    color: white;
-    width: 200px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
-    border-radius: 10px;
+.confirmout {
+  padding: 20px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px;
 }
 
-.dropdown{
-    animation: cartadded 3s ease-in-out forwards;
+.dropdown {
+  animation: cartadded 3s ease-in-out forwards;
 }
 
-
-.samph{
-    padding: 30px;
-    width: 100%;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
+.samph {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
 }
 
-.faker{
-    height: 57px;
+.faker {
+  height: 57px;
 }
 
-.secnames{
-    text-align: center;
-    font-weight: bolder;
-    font-size: 20px;
-    padding: 10px;
+.secnames {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 10px;
 }
 
-.appphones{
-    border: 1px solid rgb(153, 151, 151);
-    height: 300px;
-    min-width: 230px;
-    max-width: 230px;
-    position: relative;
-    padding: 10px;
-    padding-bottom: 20px;
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
+.appphones {
+  border: 1px solid rgb(153, 151, 151);
+  height: 300px;
+  min-width: 230px;
+  max-width: 230px;
+  position: relative;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
-.appphones:hover{
-    animation: cards 0.1s ease-in-out forwards;
+.appphones:hover {
+  animation: cards 0.1s ease-in-out forwards;
 }
 
-.iphnbanhol{
-    background-color: black;
+.iphnbanhol {
+  background-color: black;
 }
 
-
-
-.fullbanholder{
-    background-color: rgb(20,40,160);
+.fullbanholder {
+  background-color: rgb(20, 40, 160);
 }
 
-.appph{
-    padding: 30px;
-    width: 100%;  
-    display: flex;
-    gap: 30px;
-    justify-content: center;
+.appph {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
 }
 
-.view{
-    text-align: right;
-    padding: 0px 10px 10px 10px;
-    cursor: pointer;
-    text-decoration: underline;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.view {
+  text-align: right;
+  padding: 0px 10px 10px 10px;
+  cursor: pointer;
+  text-decoration: underline;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.viewh{
-    display: flex;
-    align-items: center;
-    justify-content: right;
+.viewh {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
-
-.samsec{
-    border-top: 1px solid rgb(78, 78, 78);
-    border-bottom: 1px solid rgb(78, 78, 78);
+.samsec {
+  border-top: 1px solid rgb(78, 78, 78);
+  border-bottom: 1px solid rgb(78, 78, 78);
 }
 
-.appsec{
-    border-top: 1px solid rgb(78, 78, 78);
-    border-bottom: 1px solid rgb(78, 78, 78);
+.appsec {
+  border-top: 1px solid rgb(78, 78, 78);
+  border-bottom: 1px solid rgb(78, 78, 78);
 }
 
-.samicon{
-    color: green;
+.samicon {
+  color: green;
 }
 
-.samfullsec{
-    width: 100%;
-    padding: 20px;
-    border: 1px solid grey;
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+.samfullsec {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid grey;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.appfullsec{
-    width: 100%;
-    padding: 20px;
-    border: 1px solid grey;
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+.appfullsec {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid grey;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.navhref{
-    text-decoration: none;
-    color: white;
+.navhref {
+  text-decoration: none;
+  color: white;
 }
 
-.prdt{
-    margin: 0px auto;
-    width: 1000px;
-    padding: 30px;
-    border: solid 1px grey;
+.prdt {
+  margin: 0px auto;
+  width: 1000px;
+  padding: 30px;
+  border: solid 1px grey;
 }
 
-.inpo{
-    width: 100%;
-    height: 20px;
-    
+.inpo {
+  width: 100%;
+  height: 20px;
 }
 
-.inpi{
-    height: 40px;
-    border: 1px solid grey;
-    font-size: 20px;
-    padding-left: 20px;
+.inpi {
+  height: 40px;
+  border: 1px solid grey;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
-.entpd{
-    font-weight: bolder;
-    font-size: 20px;
-    text-align: center;
-    
+.entpd {
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
 }
 
-.picform{
-    margin: 0px auto;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;;
+.picform {
+  margin: 0px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.subbut{
-    padding: 20px;
-    margin: 0 290px 0 290px;
-    cursor: pointer;
+.subbut {
+  padding: 20px;
+  margin: 0 290px 0 290px;
+  cursor: pointer;
 }
 
-.subbut:focus{
-    margin: rgb(90, 89, 89);
+.subbut:focus {
+  margin: rgb(90, 89, 89);
 }
 
-.cartsec{
-    border: solid 1px grey;
-    width: 1000px;
-    margin: 0 auto 0 auto;
-    padding: 50px;
-    
+.cartsec {
+  border: solid 1px grey;
+  width: 1000px;
+  margin: 0 auto 0 auto;
+  padding: 50px;
 }
 
-.foot{
-    padding: 30px;
-    background-color: black;
-    color: white;
+.foot {
+  padding: 30px;
+  background-color: black;
+  color: white;
 }
 
-.appphones>img, .samphones>img{
-    position: relative;
-    height: 80%;
-    width: 100%;
-    
+.appphones > img,
+.samphones > img {
+  position: relative;
+  height: 80%;
+  width: 100%;
 }
 
-.price{
-    font-weight: bolder;
+.price {
+  font-weight: bolder;
 }
 
-.addcart{
-    text-align: right;
-    background-color: gray;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    border-radius: 50%;
-    margin: 0 0px 0 85%;
-    cursor: pointer;
+.addcart {
+  text-align: right;
+  background-color: gray;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bolder;
 }
 
-.addcart:hover{
-    background-color: green;
+.addcart:hover {
+  background-color: green;
 }
 
-.green{
-    background-color: green;
+.green {
+  background-color: green;
 }
 
-.sambanner{
-    background-color: rgb(209,236,255);
+.sambanner {
+  background-color: rgb(209, 236, 255);
 }
 
-.appbann{
-    background-color: rgb(84,59,92);
+.appbann {
+  background-color: rgb(84, 59, 92);
 }
-
 
 @keyframes cartadded {
-    0%{
-        top : 0%
-    }
+  0% {
+    top: 0%;
+  }
 
-    50%{
-        top: 20%;
-    }
+  50% {
+    top: 20%;
+  }
 
-    70%{
-        top: 20%;
-    }
+  70% {
+    top: 20%;
+  }
 
-    100%{
-        top: 0%;
-    }
+  100% {
+    top: 0%;
+  }
 }

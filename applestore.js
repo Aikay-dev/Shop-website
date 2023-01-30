@@ -1,14 +1,20 @@
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
-    let storedData = localStorage.getItem("jsonData");
-    let parsedData = JSON.parse(storedData);
-    console.log(parsedData);
-    /* Reading iphones from json */
+    let datafromlocal;
+    if (localStorage.getItem("jsonData")) {
+      data = localStorage.getItem("jsonData");
+      datafromlocal = JSON.parse(data);
+      console.log(datafromlocal.samsung);
+    } else {
+      datafromlocal = data;
+      console.log(datafromlocal);
+    }
+
     let iphonestore = [];
 
-    for (let i = 0; i < parsedData.iphones.length; i++) {
-      iphonestore.push(parsedData.iphones[i]);
+    for (let i = 0; i < datafromlocal.iphones.length; i++) {
+      iphonestore.push(datafromlocal.iphones[i]);
     }
 
     /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */

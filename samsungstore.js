@@ -1,11 +1,21 @@
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
+    let datafromlocal;
+    if (localStorage.getItem("jsonData")) {
+      data = localStorage.getItem("jsonData");
+      datafromlocal = JSON.parse(data);
+      console.log(datafromlocal.samsung);
+    } else {
+      datafromlocal = data;
+      console.log(datafromlocal);
+    }
+
     /* Reading samsung from json FOR HOME PAGE*/
 
     let samsungstore = [];
-    for (let i = 0; i < data.samsung.length; i++) {
-      samsungstore.push(data.samsung[i]);
+    for (let i = 0; i < datafromlocal.samsung.length; i++) {
+      samsungstore.push(datafromlocal.samsung[i]);
     }
 
     function fisherYatesShuffleb(array) {
@@ -29,14 +39,12 @@ fetch("./storage.json")
           <p class="price">
               <span>₦</span><span class="money">${appprice}</span>
           </p>
-          <p class="addcart"><i class="fa-solid fa-cart-plus"></i></p>
+          <p class="addcart">ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
       </div>
       </div>`;
 
       document.querySelector(".samfullsec").innerHTML += boiler;
     }
-
-    
 
     const cartbut = document.querySelectorAll(".addcart");
     let arrconv = Array.from(cartbut);
