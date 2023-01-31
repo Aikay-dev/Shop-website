@@ -213,7 +213,7 @@ body {
 .cartsec {
   border: solid 1px grey;
   width: 1000px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 100px auto;
   padding: 50px 0 0 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -391,13 +391,7 @@ body {
   display: none;
 }
 
-@keyframes slideout {
-  from {
-  }
-  to {
-    transform: translateX(300%);
-  }
-}
+
 
 .classif {
   display: flex;
@@ -417,6 +411,17 @@ body {
   display: flex;
 }
 
+.totalsec{
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+}
+
+.cartsum{
+  font-weight: bolder;
+  font-size: 25px;
+  text-align: center;
+}
+
 @keyframes cartadded {
   0% {
     top: 0%;
@@ -432,5 +437,14 @@ body {
 
   100% {
     top: 0%;
+  }
+}
+
+
+@keyframes slideout {
+  from {
+  }
+  to {
+    transform: translateX(300%);
   }
 }

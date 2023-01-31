@@ -39,24 +39,52 @@ fetch("./storage.json")
           <p class="price">
               <span>₦</span><span class="money">${appprice}</span>
           </p>
-          <p class="addcart" data-value = "${appimage}, ${appname}, ${appprice}">ADD TO CART<i class="fa-solid fa-cart-plus" value = "hello"></i></p>
+          <p class="addcart" data-value = "${appimage},${appname},${appprice}">ADD TO CART<i class="fa-solid fa-cart-plus" value = "hello"></i></p>
       </div>
       </div>`;
 
       document.querySelector(".samfullsec").innerHTML += boiler;
     }
 
+    let cartstore = [];
+
     const cartbut = document.querySelectorAll(".addcart");
+    let defdataset;
+    let dataFromLocal = localStorage.getItem("cartData");
     let arrconv = Array.from(cartbut);
     arrconv.forEach(function (elem) {
       elem.addEventListener("click", async function () {
         this.classList.toggle("green");
+        let firstdata = this.dataset.value;
+        let newdata = firstdata.split(",");
+        console.log(newdata);
+        defdataset = newdata;
+        console.log(this.dataset.value);
         if (this.classList.contains("green")) {
+          if (dataFromLocal === null) {
+            const found = cartstore.find((element) => element == defdataset);
+            console.log(found);
+            cartstore.push(defdataset);
+            localStorage.setItem("cartData", JSON.stringify(cartstore));
+            console.log(cartstore);
+          } else {
+            const found = cartstore.find((element) => element == defdataset);
+            console.log(found);
+            cartstore.push(defdataset);
+            localStorage.setItem("cartData", JSON.stringify(cartstore));
+            console.log(cartstore);
+          }
+
           let red = document.querySelector(".confirm");
           red.classList.toggle("dropdown");
           await new Promise((resolve) => setTimeout(resolve, 3000));
           red.classList.toggle("dropdown");
         } else {
+          let index = cartstore.indexOf(defdataset);
+          cartstore.splice(index, 1);
+          console.log(cartstore);
+          localStorage.setItem("cartData", JSON.stringify(cartstore));
+          console.log(this.dataset.value);
           let green = document.querySelector(".confirmout");
           green.classList.toggle("dropdown");
           await new Promise((resolve) => setTimeout(resolve, 3000));
