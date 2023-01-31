@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(250, 250, 250);
 }
 
 .navone {
@@ -214,7 +214,9 @@ body {
   border: solid 1px grey;
   width: 1000px;
   margin: 0 auto 0 auto;
-  padding: 50px;
+  padding: 50px 0 0 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .foot {
@@ -264,81 +266,155 @@ body {
   background-color: rgb(84, 59, 92);
 }
 
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-
-.addp{
-    height: 300px;
-    width: 300px;
-    background-color: rgb(255, 255, 255);
-    margin-top: 100px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 20px; 
-    font-weight: bolder;
-}
-
-.remp{
-    height: 300px;
-    width: 300px;
-    background-color: rgb(255, 255, 255);
-    margin-top: 100px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 20px; 
-    font-weight: bolder;
-}
-
-.addicon{
-    background-color: white;
-    text-align: center;
-    padding: 70px;
-    font-size: 50px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-.remicon{
-    background-color: white;
-    text-align: center;
-    padding: 70px;
-    font-size: 50px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-.linkdef{
-    color: black;
-    text-decoration: none;
-}
-
-.cartphones{
+.container {
+  width: 100%;
   display: flex;
-  height: 300px;
-  background-color: red;
-  gap: 100px;
-
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-.cartimgh{
+.addp {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.remp {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.addicon {
+  background-color: white;
+  text-align: center;
+  padding: 70px;
+  font-size: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.remicon {
+  background-color: white;
+  text-align: center;
+  padding: 70px;
+  font-size: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.linkdef {
+  color: black;
+  text-decoration: none;
+}
+
+.cartphones {
+  display: flex;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  /*   gap: 100px; */
+  border: 1px solid grey;
+  position: relative;
+}
+
+.cartimgh {
   display: flex;
   align-items: center;
+  margin-left: 40px;
+  width: 200px;
 }
 
-.cartdesc{
-  padding-top: 30px;
+.cartdesc {
+  /* padding-top: 30px; */
+  margin: auto 0;
 }
 
-.cartpname{
+.cartpname {
   font-weight: bolder;
   font-size: 20px;
+  margin-top: 20px;
+}
+
+.priceca {
+  margin-top: 20px;
+  margin-left: 55px;
+}
+
+.unit {
+  margin-left: 90px;
+}
+
+.cartnum {
+  height: 20px;
+  width: 40px;
+  margin: 18px 0 0 70px;
+  outline: none;
+}
+
+.tprice {
+  margin-top: 20px;
+  margin-left: 85px;
+}
+
+.ex {
+  margin-left: 65%;
+  top: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.ex:hover {
+  background-color: red;
+}
+
+.remcart {
+  animation: slideout 1s 0.1s ease-out forwards;
+}
+
+.remcart2 {
+  display: none;
+}
+
+@keyframes slideout {
+  from {
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+.classif {
+  display: flex;
+  margin-left: 280px;
+  gap: 80px;
+  padding-bottom: 10px;
+}
+
+.forcpage {
+  background-image: url(./empty_cart.webp);
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.deschol {
+  display: flex;
 }
 
 @keyframes cartadded {
