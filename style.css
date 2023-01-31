@@ -412,16 +412,75 @@ body {
 }
 
 .totalsec{
-  height: 300px;
+  height: 320px;
   background-color: rgb(255, 255, 255);
+  padding: 0 50px;
 }
 
 .cartsum{
   font-weight: bolder;
   font-size: 25px;
   text-align: center;
+  padding-top: 10px;
 }
 
+.cartsub{
+  display: flex;
+  gap: 800px;
+  margin: 20px 0;
+}
+
+.cartship{
+  display: flex;
+  gap: 800px;
+  margin: 20px 0;
+}
+
+.cartcoup{
+  
+  margin: 20px 0;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+}
+
+.coupbod{
+  margin: 0 0 0px 550px;
+  height: 20px;
+}
+
+/* .lab{
+  
+} */
+
+.carttot{
+  display: flex;
+  flex-direction: row;
+  gap: 750px;
+  margin: 40px 0;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.cartcheck{
+  padding: 10px 50px;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
+  
+}
+
+.cartcheck:hover{
+  background-color: rgb(12, 240, 12);
+
+}
+
+.chhold{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 @keyframes cartadded {
   0% {
     top: 0%;

@@ -5,12 +5,23 @@ let appimage
 let appname
 let appprice
 
-console.log(finaldata);
+console.log(finaldata == "");
 let tester = document.querySelector(".cpage");
+let lastp = document.querySelector(".totalsec")
 
-if (localStorage.getItem("cartData") === null) {
+if (localStorage.getItem("cartData") === null || finaldata == "") {
   tester.classList.add("forcpage");
-} else {
+    lastp.classList.add("remcart2")
+    console.log(localStorage.getItem("cartData") != null && finaldata === [])
+
+}else if(localStorage.getItem("cartData") != null && finaldata == ""){
+    tester.classList.add("forcpage");
+    lastp.classList.add("remcart2")
+    console.log(localStorage.getItem("cartData") != null && localStorage.getItem("cartData") === [])
+
+
+} else if(localStorage.getItem("cartData") != null && finaldata != ""){
+    console.log(localStorage.getItem("cartData") === [])
   for (let i = 0; i < finaldata.length; i++) {
     let appimage = finaldata[i][0];
     let appname = finaldata[i][1];
@@ -57,6 +68,7 @@ arrconv.forEach(function (elem) {
       await new Promise((resolve) => setTimeout(resolve, 500));
       elem.closest(".cartphones").remove();
       tester.classList.add("forcpage");
+      lastp.classList.add("remcart2")
       console.log(finaldata)
       let dat2del = this.closest(".cartphones").dataset.value
       for (let i = 0; i < finaldata.length; i++) {
