@@ -30,6 +30,21 @@ body {
   cursor: pointer;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
 .confirm {
   padding: 20px;
   background-color: green;
@@ -336,9 +351,10 @@ body {
   font-weight: bolder;
 }
 
-.addp:hover, .remp:hover{
- box-shadow: 0 0 10px;
- scale: 1.05;
+.addp:hover,
+.remp:hover {
+  box-shadow: 0 0 10px;
+  scale: 1.05;
 }
 
 .remp {
@@ -376,8 +392,6 @@ body {
   color: black;
   text-decoration: none;
 }
-
-
 
 .cartphones {
   display: flex;
@@ -534,6 +548,7 @@ body {
   justify-content: center;
   margin-bottom: 10px;
 }
+
 @keyframes cartadded {
   0% {
     top: 0%;
@@ -558,4 +573,121 @@ body {
   to {
     transform: translateX(300%);
   }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1280px) {
+  .appph {
+    overflow-x: scroll;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: left;
+  }
+
+  .samph {
+    overflow-x: scroll;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: left;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .appph {
+    width: 900px;
+  }
+
+  .samph {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .appph {
+    width: 95%;
+  }
+
+  .samph {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .sambanner > img {
+    width: 100vw;
+  }
+}
+
+/* @media screen and (max-width: 820px) {
+  .appph{
+    width: 700px;
+  }
+
+  .samph{
+    width: 700px;
+  }
+} */
+
+/* @media screen and (max-width: 720px) {
+  .appph{
+    width: 700px;
+  }
+
+  .samph{
+    width: 700px;
+  }
+} */
+
+@media screen and (max-width: 690px) {
+  .appbann > img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .appbann > img {
+    height: 200px;
+  }
+
+  .sambanner > img {
+    height: 200px;
+  }
+
+  .navone {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navul {
+    display: none;
+  }
+
+  .navulba {
+    display: block;
+    margin-top: 50px;
+  }
+
+  .navul > a {
+    padding: 0px 30px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
 }
