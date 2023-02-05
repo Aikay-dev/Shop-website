@@ -13,82 +13,46 @@ fetch("./storage.json")
     let fillform = document.querySelector(".picform");
     fillform.addEventListener("submit", (event) => {
       event.preventDefault();
-      if (productName.value != "") {
-        if (price.value != "") {
-          if (category.value != "") {
-            if (category.value == "samsung") {
-              console.log("we are in sam");
-              if (description.value != "") {
-                if (image.value != "") {
-                  let pname = productName.value;
-                  let pprice = price.value;
-                  let pcat = category.value;
-                  let pdesc = description.value;
-                  let pimg = image.value;
+      if (isFormValid()) {
+        let pname = productName.value;
+        let pprice = price.value;
+        let pcat = category.value;
+        let pdesc = description.value;
+        let pimg = image.value;
 
-                  let str = pimg;
-                  let numberOfLetters = 12;
-                  str = str.split("");
-                  str.splice(0, numberOfLetters);
-                  str = str.join("");
-                  console.log(str);
+        let str = pimg.substring(12);
 
-                  var pack = [str, pname, pprice];
-                  console.log(pack);
-                  data.samsung.push(pack);
-                  console.log(data);
-                  localStorage.setItem("jsonData", JSON.stringify(data));
-                  /* DROPDOWN FOR CONFIRMING SAMSUNG */
-                  let confam = document.querySelector(".confirm");
-                  confam.classList.add("dropdown");
-                } else {
-                  alert("fill in the blanks");
-                }
-              } else {
-                alert("fill in the blanks");
-              }
-            } else if (category.value == "iphone") {
-              console.log("we are in iph");
-              if (description.value != "") {
-                if (image.value != "") {
-                  let pname = productName.value;
-                  let pprice = price.value;
-                  let pcat = category.value;
-                  let pdesc = description.value;
-                  let pimg = image.value;
-
-                  let str = pimg;
-                  let numberOfLetters = 12;
-                  str = str.split("");
-                  str.splice(0, numberOfLetters);
-                  str = str.join("");
-                  console.log(str);
-
-                  var pack = [str, pname, pprice];
-                  console.log(pack);
-                  data.iphones.push(pack);
-                  console.log(data);
-                  localStorage.setItem("jsonData", JSON.stringify(data));
-                  /* DROPDOWN FOR CONFIRMING IPHONE */
-                  let confam = document.querySelector(".confirm");
-                  confam.classList.add("dropdown");
-                } else {
-                  alert("fill in the blanks");
-                }
-              } else {
-                alert("fill in the blanks");
-              }
-            }
-          } else {
-            alert("fill in the blanks");
-          }
-        } else {
-          alert("fill in the blanks");
-        }
+        let pack = [str, pname, pprice];
+        addProductToData(pcat, pack);
+        localStorage.setItem("jsonData", JSON.stringify(data));
+        showConfirmation();
       } else {
         alert("fill in the blanks");
       }
     });
+
+    function isFormValid() {
+      return (
+        productName.value != "" &&
+        price.value != "" &&
+        category.value != "" &&
+        description.value != "" &&
+        image.value != ""
+      );
+    }
+
+    function addProductToData(category, pack) {
+      if (category === "samsung") {
+        data.samsung.push(pack);
+      } else if (category === "iphone") {
+        data.iphones.push(pack);
+      }
+    }
+
+    function showConfirmation() {
+      let confam = document.querySelector(".confirm");
+      confam.classList.add("dropdown");
+    }
   })
 
   .catch((error) => {

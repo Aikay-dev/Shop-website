@@ -172,6 +172,45 @@ body {
   width: 1000px;
   padding: 30px;
   border: solid 1px grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rempro {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 10px;
+  color: red;
+}
+
+.caut {
+  text-align: center;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin: auto;
+}
+
+.delcart {
+  text-align: right;
+  background-color: gray;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+
+.delcart:hover {
+  background-color: red;
 }
 
 .inpo {
@@ -232,6 +271,18 @@ body {
   width: 100%;
 }
 
+.samphones {
+  border: 1px solid rgb(153, 151, 151);
+  height: 300px;
+  min-width: 230px;
+  max-width: 230px;
+  position: relative;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
 .price {
   font-weight: bolder;
 }
@@ -285,6 +336,11 @@ body {
   font-weight: bolder;
 }
 
+.addp:hover, .remp:hover{
+ box-shadow: 0 0 10px;
+ scale: 1.05;
+}
+
 .remp {
   height: 300px;
   width: 300px;
@@ -320,6 +376,8 @@ body {
   color: black;
   text-decoration: none;
 }
+
+
 
 .cartphones {
   display: flex;
@@ -391,8 +449,6 @@ body {
   display: none;
 }
 
-
-
 .classif {
   display: flex;
   margin-left: 280px;
@@ -411,40 +467,39 @@ body {
   display: flex;
 }
 
-.totalsec{
+.totalsec {
   height: 320px;
   background-color: rgb(255, 255, 255);
   padding: 0 50px;
 }
 
-.cartsum{
+.cartsum {
   font-weight: bolder;
   font-size: 25px;
   text-align: center;
   padding-top: 10px;
 }
 
-.cartsub{
+.cartsub {
   display: flex;
   gap: 800px;
   margin: 20px 0;
 }
 
-.cartship{
+.cartship {
   display: flex;
   gap: 800px;
   margin: 20px 0;
 }
 
-.cartcoup{
-  
+.cartcoup {
   margin: 20px 0;
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
 }
 
-.coupbod{
+.coupbod {
   margin: 0 0 0px 550px;
   height: 20px;
 }
@@ -453,7 +508,7 @@ body {
   
 } */
 
-.carttot{
+.carttot {
   display: flex;
   flex-direction: row;
   gap: 750px;
@@ -462,21 +517,19 @@ body {
   font-size: 25px;
 }
 
-.cartcheck{
+.cartcheck {
   padding: 10px 50px;
   cursor: pointer;
   border: none;
   background-color: black;
   color: white;
-  
 }
 
-.cartcheck:hover{
+.cartcheck:hover {
   background-color: rgb(12, 240, 12);
-
 }
 
-.chhold{
+.chhold {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -498,7 +551,6 @@ body {
     top: 0%;
   }
 }
-
 
 @keyframes slideout {
   from {
