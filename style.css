@@ -465,9 +465,20 @@ body {
 
 .classif {
   display: flex;
-  margin-left: 280px;
-  gap: 80px;
+  justify-content: space-around;
   padding-bottom: 10px;
+}
+
+.cartop{
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.classif :nth-child(3):hover{
+  background-color: red;
 }
 
 .forcpage {
@@ -638,8 +649,23 @@ body {
   }
 } */
 
+@media screen and (max-width: 1030px) {
+  .cartsec{
+    width: 95%;
+  }
+}
+
 @media screen and (max-width: 690px) {
   .appbann > img {
+    width: 100%;
+  }
+  .container{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .iphnbanhol>img{
     width: 100%;
   }
 }
@@ -689,5 +715,32 @@ body {
   }
 }
 
+@media screen and (max-width: 580px) {
+  .fullbanholder>img{
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 490px) {
+
+  .iphnbanhol>img{
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .fullbanholder>img{
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .addp, .remp{
+    width: 100%;
+  }
+
+
 }
