@@ -199,10 +199,11 @@ body {
 .prdt {
   margin: 0px auto;
   width: 1000px;
-  padding: 30px;
+  padding: 10px;
   border: solid 1px grey;
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
 }
 
@@ -411,7 +412,6 @@ body {
   display: flex;
   height: 200px;
   background-color: rgb(255, 255, 255);
-  /*   gap: 100px; */
   border: 1px solid grey;
   position: relative;
 }
@@ -521,13 +521,13 @@ body {
 
 .cartsub {
   display: flex;
-  gap: 800px;
+  justify-content: space-between;
   margin: 20px 0;
 }
 
 .cartship {
   display: flex;
-  gap: 800px;
+  justify-content: space-between;
   margin: 20px 0;
 }
 
@@ -535,22 +535,19 @@ body {
   margin: 20px 0;
   background-color: rgb(255, 255, 255);
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .coupbod {
-  margin: 0 0 0px 550px;
   height: 20px;
 }
 
-/* .lab{
-  
-} */
 
 .carttot {
   display: flex;
   flex-direction: row;
-  gap: 750px;
+  justify-content: space-between;
   margin: 40px 0;
   font-weight: bolder;
   font-size: 25px;
@@ -617,6 +614,16 @@ body {
   }
 }
 
+@media screen and (max-width: 1030px) {
+  .cartsec{
+    width: 95%;
+  }
+
+  .prdt{
+    width: 800px;
+  }
+}
+
 @media screen and (max-width: 1020px) {
   .appph {
     width: 900px;
@@ -641,31 +648,49 @@ body {
   .sambanner > img {
     width: 100vw;
   }
+
+  .deschol{
+    flex-direction: column;
+  }
+
+  .priceca{
+    margin: 10px;
+  }
+
+  .cartnum{
+    margin: 10px;
+  }
+
+  .tprice{
+    margin: 10px;
+  }
+
+  .ex{
+    margin-left: 50%;
+  }
+
+  .cartsec{
+    width: 600px;
+  }
+
 }
 
-/* @media screen and (max-width: 820px) {
-  .appph{
-    width: 700px;
+@media screen and (max-width: 850px) {
+  .prdt{
+    width: 600px;
   }
 
-  .samph{
-    width: 700px;
-  }
-} */
-
-/* @media screen and (max-width: 720px) {
-  .appph{
-    width: 700px;
+  .inpi{
+    width: 500px;
   }
 
-  .samph{
-    width: 700px;
+  .picform{
+    width: 100%;
   }
-} */
 
-@media screen and (max-width: 1030px) {
-  .cartsec{
-    width: 95%;
+  .subbut{
+    margin: 0 120px;
+    padding: 10px;
   }
 }
 
@@ -676,6 +701,48 @@ body {
   .container{
     flex-direction: column;
   }
+}
+
+
+@media screen and (max-width: 620px) {
+  .ex{
+    margin-left: 30%;
+  }
+
+  .cartsec{
+    width: 400px;
+  }
+
+  .classif{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .classif>a, .classif>p{
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .cartimgh{
+    margin: 0;
+    width: 120px;
+  }
+
+  .prdt{
+    width: 400px;
+  }
+
+  .inpi{
+    width: 300px;
+  }
+
+  .subbut{
+    margin: 0 20px ;
+    padding: 10px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -736,6 +803,19 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+  .caut{
+    white-space: pre-wrap;
+    width: 300px;
+    padding-top: 10px;
+  }
+
+  .prdt{
+    width: 300px;
+  }
+
+  .inpi{
+    width: 200px;
+  }
 }
 
 @media screen and (max-width: 490px) {
@@ -748,6 +828,38 @@ body {
 @media screen and (max-width: 450px) {
   .fullbanholder>img{
     height: 160px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .cartsec{
+    width: 300px;
+  }
+
+  .ex{
+    margin-left: 40%;
+  }
+
+  .cartimgh{
+    width: 150px;
+  }
+
+  .chhold{
+    margin-bottom: 0px;
+  }
+
+  .carttot{
+    margin-bottom: 10px;
+  }
+
+  .prdt{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inpi{
+    width: 100%;
   }
 }
 
