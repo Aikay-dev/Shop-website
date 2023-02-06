@@ -10,15 +10,12 @@ hamburger.addEventListener("click", () => {
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     let dataFromLocal = localStorage.getItem("jsonData");
-    console.log(dataFromLocal);
     if (dataFromLocal) {
       data = JSON.parse(dataFromLocal);
     } else {
       data;
     }
-    console.log(data);
     let fillform = document.querySelector(".picform");
     fillform.addEventListener("submit", (event) => {
       event.preventDefault();

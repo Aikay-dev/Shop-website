@@ -21,16 +21,12 @@ let thetop = document.querySelector(".surr");
 if (localStorage.getItem("cartData") === null || finaldata == "") {
   tester.classList.add("forcpage");
   lastp.classList.add("remcart2");
-  thetop.classList.add("remcart2")
+  thetop.classList.add("remcart2");
 } else if (localStorage.getItem("cartData") != null && finaldata == "") {
   tester.classList.add("forcpage");
   lastp.classList.add("remcart2");
-  console.log(
-    localStorage.getItem("cartData") != null &&
-      localStorage.getItem("cartData") === []
-  );
 } else if (localStorage.getItem("cartData") != null && finaldata != "") {
-  console.log(localStorage.getItem("cartData") === []);
+  /* LOOPING THE DATA THROUGH A BOILER PLATE */
   for (let i = 0; i < finaldata.length; i++) {
     let appimage = finaldata[i][0];
     let appname = finaldata[i][1];
@@ -60,22 +56,22 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
   }
 }
 
-let clbt = document.querySelector("#clearall")
+let clbt = document.querySelector("#clearall");
 const cphones = document.querySelectorAll(".cartphones");
-const cphnew = Array.from(cphones)
-let target = document.querySelector(".cartphones")
+const cphnew = Array.from(cphones);
+let target = document.querySelector(".cartphones");
 let thelast = document.querySelector(".totalsec");
 
-  clbt.addEventListener('click', async function(){
-    cphones.forEach(d => d.classList.add('remcart'));
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    target.remove();
-    tester.classList.add("forcpage");
-    thelast.classList.add("remcart2")
-    thetop.classList.add("remcart2")
-    finaldata = []
-    localStorage.setItem("cartData", JSON.stringify(finaldata));
-  });
+clbt.addEventListener("click", async function () {
+  cphones.forEach((d) => d.classList.add("remcart"));
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  target.remove();
+  tester.classList.add("forcpage");
+  thelast.classList.add("remcart2");
+  thetop.classList.add("remcart2");
+  finaldata = [];
+  localStorage.setItem("cartData", JSON.stringify(finaldata));
+});
 
 const cartbut = document.querySelectorAll(".ex");
 let defdataset;
@@ -95,7 +91,6 @@ arrconv.forEach(function (elem) {
       elem.closest(".cartphones").remove();
       tester.classList.add("forcpage");
       lastp.classList.add("remcart2");
-      console.log(finaldata);
       let dat2del = this.closest(".cartphones").dataset.value;
       for (let i = 0; i < finaldata.length; i++) {
         let innerArray = finaldata[i];
@@ -104,7 +99,6 @@ arrconv.forEach(function (elem) {
           break;
         }
       }
-      console.log(finaldata);
       localStorage.setItem("cartData", JSON.stringify(finaldata));
     } else if (childleng > 1) {
       elem.closest(".cartphones").classList.add("remcart");
@@ -120,8 +114,6 @@ arrconv.forEach(function (elem) {
         }
       }
       localStorage.setItem("cartData", JSON.stringify(finaldata));
-      console.log(finaldata);
-      /* let valueToRemove =  */
     }
   });
 });

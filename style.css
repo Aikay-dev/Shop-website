@@ -84,7 +84,7 @@ body {
 }
 
 .faker {
-  height: 57px;
+  height: 67px;
 }
 
 .secnames {
@@ -101,7 +101,7 @@ body {
   max-width: 230px;
   position: relative;
   padding: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
@@ -294,7 +294,7 @@ body {
   max-width: 230px;
   position: relative;
   padding: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
@@ -469,7 +469,7 @@ body {
   padding-bottom: 10px;
 }
 
-.cartop{
+.cartop {
   background-color: black;
   color: white;
   padding: 10px 20px;
@@ -477,15 +477,16 @@ body {
   cursor: pointer;
 }
 
-.classif :nth-child(3):hover{
+.classif :nth-child(3):hover {
   background-color: red;
 }
 
 .forcpage {
   background-image: url(./empty_cart.webp);
+  background-size: contain;
   height: 500px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center;
 }
 
 .deschol {
@@ -528,7 +529,6 @@ body {
 .coupbod {
   height: 20px;
 }
-
 
 .carttot {
   display: flex;
@@ -601,11 +601,11 @@ body {
 }
 
 @media screen and (max-width: 1030px) {
-  .cartsec{
+  .cartsec {
     width: 95%;
   }
 
-  .prdt{
+  .prdt {
     width: 800px;
   }
 }
@@ -635,46 +635,45 @@ body {
     width: 100vw;
   }
 
-  .deschol{
+  .deschol {
     flex-direction: column;
   }
 
-  .priceca{
+  .priceca {
     margin: 10px;
   }
 
-  .cartnum{
+  .cartnum {
     margin: 10px;
   }
 
-  .tprice{
+  .tprice {
     margin: 10px;
   }
 
-  .ex{
+  .ex {
     margin-left: 50%;
   }
 
-  .cartsec{
+  .cartsec {
     width: 600px;
   }
-
 }
 
 @media screen and (max-width: 850px) {
-  .prdt{
+  .prdt {
     width: 600px;
   }
 
-  .inpi{
+  .inpi {
     width: 500px;
   }
 
-  .picform{
+  .picform {
     width: 100%;
   }
 
-  .subbut{
+  .subbut {
     margin: 0 120px;
     padding: 10px;
   }
@@ -684,55 +683,53 @@ body {
   .appbann > img {
     width: 100%;
   }
-  .container{
+  .container {
     flex-direction: column;
   }
 }
 
-
 @media screen and (max-width: 620px) {
-  .ex{
+  .ex {
     margin-left: 30%;
   }
 
-  .cartsec{
+  .cartsec {
     width: 400px;
   }
 
-  .classif{
+  .classif {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
   }
 
-  .classif>a, .classif>p{
+  .classif > a,
+  .classif > p {
     width: 200px;
     margin-bottom: 10px;
   }
 
-  .cartimgh{
+  .cartimgh {
     margin: 0;
     width: 120px;
   }
 
-  .prdt{
+  .prdt {
     width: 400px;
   }
 
-  .inpi{
+  .inpi {
     width: 300px;
   }
 
-  .subbut{
-    margin: 0 20px ;
+  .subbut {
+    margin: 0 20px;
     padding: 10px;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-  .iphnbanhol>img{
+  .iphnbanhol > img {
     width: 100%;
   }
 }
@@ -783,76 +780,74 @@ body {
 }
 
 @media screen and (max-width: 580px) {
-  .fullbanholder>img{
+  .fullbanholder > img {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .caut{
+  .caut {
     white-space: pre-wrap;
     width: 300px;
     padding-top: 10px;
   }
 
-  .prdt{
+  .prdt {
     width: 300px;
   }
 
-  .inpi{
+  .inpi {
     width: 200px;
   }
 }
 
 @media screen and (max-width: 490px) {
-
-  .iphnbanhol>img{
+  .iphnbanhol > img {
     height: 200px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .fullbanholder>img{
+  .fullbanholder > img {
     height: 160px;
   }
 }
 
 @media screen and (max-width: 420px) {
-  .cartsec{
+  .cartsec {
     width: 300px;
   }
 
-  .ex{
+  .ex {
     margin-left: 40%;
   }
 
-  .cartimgh{
+  .cartimgh {
     width: 150px;
   }
 
-  .chhold{
+  .chhold {
     margin-bottom: 0px;
   }
 
-  .carttot{
+  .carttot {
     margin-bottom: 10px;
   }
 
-  .prdt{
+  .prdt {
     width: 90%;
     justify-content: center;
     align-items: center;
   }
 
-  .inpi{
+  .inpi {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 330px) {
-  .addp, .remp{
+  .addp,
+  .remp {
     width: 100%;
   }
-
-
 }

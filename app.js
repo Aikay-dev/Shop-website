@@ -93,22 +93,16 @@ fetch("./storage.json")
         this.classList.toggle("green");
         let firstdata = this.dataset.value;
         let newdata = firstdata.split(",");
-        console.log(newdata);
         defdataset = newdata;
-        console.log(this.dataset.value);
         if (this.classList.contains("green")) {
           if (dataFromLocal === null) {
             const found = cartstore.find((element) => element == defdataset);
-            console.log(found);
             cartstore.push(defdataset);
             localStorage.setItem("cartData", JSON.stringify(cartstore));
-            console.log(cartstore);
           } else {
             const found = cartstore.find((element) => element == defdataset);
-            console.log(found);
             cartstore.push(defdataset);
             localStorage.setItem("cartData", JSON.stringify(cartstore));
-            console.log(cartstore);
           }
 
           let red = document.querySelector(".confirm");
@@ -118,9 +112,7 @@ fetch("./storage.json")
         } else {
           let index = cartstore.indexOf(defdataset);
           cartstore.splice(index, 1);
-          console.log(cartstore);
           localStorage.setItem("cartData", JSON.stringify(cartstore));
-          console.log(this.dataset.value);
           let green = document.querySelector(".confirmout");
           green.classList.toggle("dropdown");
           await new Promise((resolve) => setTimeout(resolve, 3000));

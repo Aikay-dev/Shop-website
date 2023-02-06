@@ -9,18 +9,15 @@ hamburger.addEventListener("click", () => {
 
 let localdataraw = localStorage.getItem("jsonData");
 let localdata = JSON.parse(localdataraw);
-console.log(fetch("./storage.json"));
 
 if (localdata === null) {
   fetch("./storage.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
 
       /* READING FROM IPHONE */
 
       let iphonestore = data.iphones;
-      console.log(iphonestore);
 
       /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */
 
@@ -53,7 +50,6 @@ if (localdata === null) {
       }
 
       let samsungstore = data.samsung;
-      console.log(samsungstore);
 
       function fisherYatesShuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -96,9 +92,7 @@ if (localdata === null) {
             let sampush = samsungstore;
 
             if (this.closest(".appphones") != null) {
-              console.log(iphonestore);
               let convarr = this.closest(".delcart").dataset.value;
-              console.log(convarr);
 
               for (let i = 0; i < iphonestore.length; i++) {
                 let subArray = iphonestore[i];
@@ -115,14 +109,9 @@ if (localdata === null) {
               localStorage.setItem("jsonData", JSON.stringify(mainstore));
 
               this.closest(".appphones").remove();
-              console.log(mainstore);
               return iphonestore;
             } else {
-              console.log(samsungstore);
               let convarr = this.closest(".delcart").dataset.value;
-
-              console.log(convarr);
-              console.log(samsungstore);
 
               for (let i = 0; i < samsungstore.length; i++) {
                 let subArray = samsungstore[i];
@@ -139,7 +128,6 @@ if (localdata === null) {
               localStorage.setItem("jsonData", JSON.stringify(mainstore));
               this.closest(".samphones").remove();
 
-              console.log(mainstore);
               return samsungstore;
             }
           }
@@ -151,7 +139,6 @@ if (localdata === null) {
       console.error("Error:", error);
     });
 } else {
-  console.log(localdata);
 
   let iphonestore = localdata.iphones;
 
@@ -185,7 +172,6 @@ if (localdata === null) {
     document.querySelector(".prdt").innerHTML += boiler;
   }
 
-  console.log(iphonestore);
 
   /* GETTING DATA FOR SAMSUNG PHONES */
 
@@ -221,7 +207,6 @@ if (localdata === null) {
     document.querySelector(".prdt").innerHTML += boiler;
   }
 
-  console.log(samsungstore);
 
   const cartbut = document.querySelectorAll(".delcart");
   let arrconv = Array.from(cartbut);
@@ -233,9 +218,7 @@ if (localdata === null) {
         let sampush = samsungstore;
 
         if (this.closest(".appphones") != null) {
-          console.log(iphonestore);
           let convarr = this.closest(".delcart").dataset.value;
-          console.log(convarr);
 
           for (let i = 0; i < iphonestore.length; i++) {
             let subArray = iphonestore[i];
@@ -252,23 +235,15 @@ if (localdata === null) {
           localStorage.setItem("jsonData", JSON.stringify(mainstore));
 
           this.closest(".appphones").remove();
-          console.log(convarr);
-          console.log("this si");
           return iphonestore;
         } else {
-          console.log(samsungstore);
           let convarr = this.closest(".delcart").dataset.value;
-
-          console.log(convarr);
-          console.log(samsungstore);
 
           for (let i = 0; i < samsungstore.length; i++) {
             let subArray = samsungstore[i];
             if (subArray.includes(convarr)) {
               samsungstore.splice(i, 1);
               break;
-            } else {
-              console.log("no work");
             }
           }
 
@@ -279,7 +254,6 @@ if (localdata === null) {
           localStorage.setItem("jsonData", JSON.stringify(mainstore));
           this.closest(".samphones").remove();
 
-          console.log(convarr);
           return samsungstore;
         }
       }
