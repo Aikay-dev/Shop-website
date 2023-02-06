@@ -1,3 +1,12 @@
+const hamburger = document.querySelector(".hamburger");
+const navflow = document.querySelector(".navul");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navflow.classList.toggle("navulba");
+  navflow.classList.toggle("navulba>a");
+});
+
 let dataFromLocal = localStorage.getItem("cartData");
 let finaldata = JSON.parse(dataFromLocal);
 let boiler;
@@ -5,14 +14,14 @@ let appimage;
 let appname;
 let appprice;
 
-console.log(finaldata == "");
 let tester = document.querySelector(".cpage");
 let lastp = document.querySelector(".totalsec");
+let thetop = document.querySelector(".surr");
 
 if (localStorage.getItem("cartData") === null || finaldata == "") {
   tester.classList.add("forcpage");
   lastp.classList.add("remcart2");
-  console.log(localStorage.getItem("cartData") != null && finaldata === []);
+  thetop.classList.add("remcart2")
 } else if (localStorage.getItem("cartData") != null && finaldata == "") {
   tester.classList.add("forcpage");
   lastp.classList.add("remcart2");
@@ -51,6 +60,23 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
   }
 }
 
+let clbt = document.querySelector("#clearall")
+const cphones = document.querySelectorAll(".cartphones");
+const cphnew = Array.from(cphones)
+let target = document.querySelector(".cartphones")
+let thelast = document.querySelector(".totalsec");
+
+  clbt.addEventListener('click', async function(){
+    cphones.forEach(d => d.classList.add('remcart'));
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    target.remove();
+    tester.classList.add("forcpage");
+    thelast.classList.add("remcart2")
+    thetop.classList.add("remcart2")
+    finaldata = []
+    localStorage.setItem("cartData", JSON.stringify(finaldata));
+  });
+
 const cartbut = document.querySelectorAll(".ex");
 let defdataset;
 let arrconv = Array.from(cartbut);
@@ -85,8 +111,6 @@ arrconv.forEach(function (elem) {
       await new Promise((resolve) => setTimeout(resolve, 500));
       elem.closest(".cartphones").remove();
       childleng -= 1;
-      console.log(childleng);
-      console.log(this.closest(".cartphones").dataset.value);
       let dat2del = this.closest(".cartphones").dataset.value;
       for (let i = 0; i < finaldata.length; i++) {
         let innerArray = finaldata[i];

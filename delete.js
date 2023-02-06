@@ -1,3 +1,12 @@
+const hamburger = document.querySelector(".hamburger");
+const navflow = document.querySelector(".navul");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navflow.classList.toggle("navulba");
+  navflow.classList.toggle("navulba>a");
+});
+
 let localdataraw = localStorage.getItem("jsonData");
 let localdata = JSON.parse(localdataraw);
 console.log(fetch("./storage.json"));

@@ -1,3 +1,12 @@
+const hamburger = document.querySelector(".hamburger");
+const navflow = document.querySelector(".navul");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navflow.classList.toggle("navulba");
+  navflow.classList.toggle("navulba>a");
+});
+
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
