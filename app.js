@@ -7,9 +7,22 @@ hamburger.addEventListener("click", () => {
   navflow.classList.toggle("navulba>a");
 });
 
+
+
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
+
+    let carr = document.querySelector("#cartmain")
+    carr.addEventListener("click", () => {
+      console.log(data);
+    })
+    if(data == null || data == ""){
+      console.log("helo")
+    }
+
+
+
     /* Reading iphones from json */
     let iphonestore = [];
 
@@ -103,12 +116,14 @@ fetch("./storage.json")
             cartstore.push(defdataset);
             localStorage.setItem("cartData", JSON.stringify(cartstore));
             console.log(cartstore);
+            console.log(data.length);
           } else {
             const found = cartstore.find((element) => element == defdataset);
             console.log(found);
             cartstore.push(defdataset);
             localStorage.setItem("cartData", JSON.stringify(cartstore));
-            console.log(cartstore);
+            console.log(cartstore.length);
+            carr.style.setProperty("--after-content", `${cartstore.length}`)
           }
 
           let red = document.querySelector(".confirm");
@@ -125,6 +140,7 @@ fetch("./storage.json")
           green.classList.toggle("dropdown");
           await new Promise((resolve) => setTimeout(resolve, 3000));
           green.classList.toggle("dropdown");
+          console.log(data.length);
         }
       });
     });

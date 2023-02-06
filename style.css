@@ -35,6 +35,20 @@ body {
   cursor: pointer;
 }
 
+#cartmain::after{
+  content: "0";
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  position: absolute;
+  border-radius: 50%;
+  top: 20%;
+  text-align: center;
+  padding: 5px;
+  font-size: 10px;
+
+}
+
 .bar {
   display: block;
   width: 25px;
