@@ -7,9 +7,22 @@ hamburger.addEventListener("click", () => {
   navflow.classList.toggle("navulba>a");
 });
 
+
+
 fetch("./storage.json")
   .then((response) => response.json())
   .then((data) => {
+
+    let carr = document.querySelector("#cartmain")
+    carr.addEventListener("click", () => {
+      console.log(data);
+    })
+    if(data == null || data == ""){
+      console.log("helo")
+    }
+
+
+
     /* Reading iphones from json */
     let iphonestore = [];
 
@@ -117,6 +130,7 @@ fetch("./storage.json")
           green.classList.toggle("dropdown");
           await new Promise((resolve) => setTimeout(resolve, 3000));
           green.classList.toggle("dropdown");
+          console.log(data.length);
         }
       });
     });
