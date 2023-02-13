@@ -42,6 +42,40 @@ form.addEventListener("submit", (e) => {
     alert("fill in the empty boxes");
   } else {
     if (form.category.value == "iphone") {
+      let iphRefdata = database.ref("iphones");
+
+      iphRefdata.once("value").then(function (snapshot) {
+        iphdata = snapshot.val();
+        iphlength = iphdata.length;
+
+        let fileitem = form.filename.files[0];
+        let filename = form.name.value;
+        console.log(form.filename.files[0].type);
+        console.log(form.category.value == "iphone");
+
+        let storageRef = storage.ref("images/" + filename);
+        let uploadTask = storageRef.put(fileitem);
+
+        async function getUrl() {
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+
+          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            console.log("File uploaded");
+
+            let ref1 = database.ref("iphones");
+            let ref2 = ref1.child(iphlength);
+
+            ref2.set({
+              0: downloadURL,
+              1: form.price.value,
+              2: form.name.value,
+            });
+            form.reset();
+          });
+        }
+
+        getUrl();
+      });
     } else {
       let samRefdata = database.ref("samsung");
 
@@ -57,18 +91,25 @@ form.addEventListener("submit", (e) => {
         let storageRef = storage.ref("images/" + filename);
         let uploadTask = storageRef.put(fileitem);
 
-        uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-          console.log("File available at", downloadURL);
+        async function getUrl() {
+          await new Promise((resolve) => setTimeout(resolve, 3000));
 
-          let ref1 = database.ref("samsung");
-          let ref2 = ref1.child(samlength);
+          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+            console.log("File available at");
 
-          ref2.set({
-            0: downloadURL,
-            1: form.price.value,
-            2: form.name.value,
+            let ref1 = database.ref("samsung");
+            let ref2 = ref1.child(samlength);
+
+            ref2.set({
+              0: downloadURL,
+              1: form.price.value,
+              2: form.name.value,
+            });
+            form.reset();
           });
-        });
+        }
+
+        getUrl();
       });
     }
   }
