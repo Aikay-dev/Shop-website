@@ -2,11 +2,9 @@
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
       import { getStorage} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js"
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"
+
+      /* project config */
       const firebaseConfig = {
         apiKey: "AIzaSyBEgf5tB55aeJSLYv50DjT38XRuZiAdrxE",
         authDomain: "shop-site-269eb.firebaseapp.com",
@@ -20,16 +18,104 @@
     
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      import {getDatabase, ref, set, child, update, remove}
-      from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"
-      console.log(firebase);
-      let form = document.querySelector(".picform")
+
+  /* getting the storage */
+  let storage = firebase.storage();
+  let database = firebase.database();
+  let form = document.querySelector(".picform")
+  let iphdata;
+  let iphlength;
+  let sendImage;
+
+   form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if(form.name.value.length == 0 || form.price.value.length == 0 || form.filename.value.length == 0){
+      alert("fill in the empty boxes")
+    }else{
+      if(form.category.value == "iphone"){
+        let iphoneRefdata = database.ref('iphones');
+        
+        iphoneRefdata.once('value')
+        .then(function(snapshot) {
+          iphdata = snapshot.val();
+          console.log(iphdata);
+          iphlength = iphdata.length
+          console.log(iphlength);
+
+          let fileitem = form.filename.files[0];
+          let filename = form.name.value;
+          console.log(form.filename.files[0].type);
+          console.log(iphdata);
+          console.log(form.category.value == "iphone");
+
+          let storageRef = storage.ref("images/" +filename);
+          let uploadTask = storageRef.put(fileitem);
+
+          uploadTask.snapshot.ref.getDownloadURL()
+          .then(function(downloadURL) {
+            console.log("File available at", downloadURL);
+
+          let ref1 = database.ref('iphones');
+          let ref2 = ref1.child(iphlength);
+
+          ref2.set({
+            0: downloadURL,
+            1: form.price.value,
+            2: form.name.value
+          });
+
+          })
+ 
+          
+          
+        })
+
+
+
+        
+
+      }else{
+        
+      }
+    }
+   })
+  
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*       let refdata = database.ref('iphones');
+
+      refdata.once('value').then(function(snapshot) {
+      var data = snapshot.val();
+      console.log(data);
+});
+
 
       function insertData(){
         set(ref(db, "phones/" + form.category.value), {
+          image: form.filename.value,
           Name: form.name.value,
-          price: form.price.value,
-          image: form.filename.value
+          price: form.price.value
+          
           
         })
         .then(() => {
@@ -42,12 +128,36 @@
         })
       }
 
-      
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault()
-        insertData()
+        let fileitem = form.filename.files[0];
+        console.log(fileitem);
+        let filename = form.filename.files[0].name;
+
+        let storageRef = storage.ref("images/" +filename)
+        let uploadTask = storageRef.put(fileitem)
       })
+
+ */
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

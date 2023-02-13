@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script type="module" src="./package.js"></script>
   </head>
   <body>
     <div class="confirm">ADDED TO INVENTORY</div>
@@ -38,7 +39,10 @@
         <p class="inpo">Product price</p>
         <input type="text" class="inpi" id="inpi2" name="price"/>
         <p class="inpo">Product category</p>
-        <input type="text" class="inpi" id="inpi3" name="category"/>
+        <select type="text" class="inpi" id="inpi3" name="category">
+          <option value="iphone" class="opti">iphone</option>
+          <option value="Samsung" class="opti">Samsung</option>
+        </select>
         <p class="inpo">Product Description</p>
         <input type="text" class="inpi" id="inpi4" />
         <p class="inpo">Upload Product Image</p>
@@ -47,6 +51,6 @@
       </form>
     </section>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-    <script type="module" src="./package.js"></script>
+    
   </body>
 </html>
