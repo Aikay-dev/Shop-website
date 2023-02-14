@@ -209,9 +209,6 @@ body {
 
 .prdt {
   margin: 0px auto;
-  width: 1000px;
-  padding: 10px;
-  border: solid 1px grey;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -630,9 +627,7 @@ body {
     width: 95%;
   }
 
-  .prdt {
-    width: 800px;
-  }
+
 }
 
 @media screen and (max-width: 1020px) {
@@ -686,9 +681,7 @@ body {
 }
 
 @media screen and (max-width: 850px) {
-  .prdt {
-    width: 600px;
-  }
+
 
   .inpi {
     width: 500px;
@@ -739,9 +732,7 @@ body {
     width: 120px;
   }
 
-  .prdt {
-    width: 400px;
-  }
+
 
   .inpi {
     width: 300px;
@@ -817,9 +808,30 @@ body {
     padding-top: 10px;
   }
 
-  .prdt {
-    width: 300px;
+  .prdt>div{
+    height: 270px;
+    min-width: 200px;
+    max-width: 200px;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 25px;
   }
+
+  .addcart{
+    text-align: right;
+    background-color: gray;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
+
 
   .inpi {
     width: 200px;
@@ -860,7 +872,7 @@ body {
   }
 
   .prdt {
-    width: 90%;
+   
     justify-content: center;
     align-items: center;
   }
@@ -868,6 +880,25 @@ body {
   .inpi {
     width: 100%;
   }
+
+  .prdt>div{
+    height: 220px;
+    min-width: 150px;
+    max-width: 150px;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 25px;
+    font-size: 10px;
+  }
+
+  .caut{
+    width: 100%;
+  }
+
+ /*  .addcart{
+    scale: 0.6;
+  } */
+
 }
 
 @media screen and (max-width: 330px) {
