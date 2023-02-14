@@ -151,6 +151,17 @@ body {
   align-items: center;
 }
 
+.secbanhol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(248,243,240);
+}
+
+.fullbanholder2{
+  height: 200px;
+  
+}
 .viewh {
   display: flex;
   align-items: center;

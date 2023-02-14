@@ -7,21 +7,190 @@ hamburger.addEventListener("click", () => {
   navflow.classList.toggle("navulba>a");
 });
 
-let localdataraw = localStorage.getItem("jsonData");
+const firebaseConfig = {
+  apiKey: "AIzaSyBEgf5tB55aeJSLYv50DjT38XRuZiAdrxE",
+  authDomain: "shop-site-269eb.firebaseapp.com",
+  databaseURL: "https://shop-site-269eb-default-rtdb.firebaseio.com",
+  projectId: "shop-site-269eb",
+  storageBucket: "shop-site-269eb.appspot.com",
+  messagingSenderId: "139391464564",
+  appId: "1:139391464564:web:2be388f749b78b8c04cd21",
+  measurementId: "G-CLNF0CJQEJ",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const storage = firebase.storage();
+const database = firebase.database();
+
+/* Getting iphone data from database */
+const iphRefdata = database.ref("iphones");
+const snapshot = await iphRefdata.once("value");
+let iphdata = snapshot.val();
+console.log(iphdata);
+
+/* Shuffle using fisher yates method */
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+shuffle(iphdata);
+
+/* Reading from array and inserting into inner html */
+for (let i = 0; i < iphdata.length; i++) {
+  let appimage = iphdata[i][0];
+  let appprice = iphdata[i][1];
+  let appname = iphdata[i][2];
+
+  let boiler = `<div class="appphones">
+  <img src="${appimage}">
+  <div class="prdet">
+      <p>${appname}</p>
+      <p class="price">
+          <span>₦ </span><span class="money">${appprice}</span>
+      </p>
+      <p class="addcart" data-value = "${appimage},${appname},${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+  </div>
+  </div>`;
+
+  document.querySelector(".prdt").innerHTML += boiler;
+}
+
+
+/* Getting samsung data from database */
+const samRefdata = database.ref("samsung");
+const snapshotsam = await samRefdata.once("value");
+let samdata = snapshotsam.val();
+console.log(samdata);
+
+/* Shuffle using fisher yates method */
+
+function shuffle2(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+shuffle2(samdata);
+
+/* Reading from array and inserting into inner html */
+for (let i = 0; i < samdata.length; i++) {
+  let appimage = samdata[i][0];
+  let appprice = samdata[i][1];
+  let appname = samdata[i][2];
+
+  let boiler = `<div class="appphones">
+  <img src="${appimage}">
+  <div class="prdet">
+      <p>${appname}</p>
+      <p class="price">
+          <span>₦ </span><span class="money">${appprice}</span>
+      </p>
+      <p class="addcart" data-value = "${appimage},${appname},${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+  </div>
+  </div>`;
+
+  document.querySelector(".prdt").innerHTML += boiler;
+}
+
+
+
+
+
+
+const cartbut = document.querySelectorAll(".addcart");
+    let arrconv = Array.from(cartbut);
+    arrconv.forEach(function (elem) {
+      elem.addEventListener("click", async function () {
+        this.classList.toggle("green");
+        
+        if (this.classList.contains("green")) {
+
+          let red = document.querySelector(".confirm");
+          red.classList.toggle("dropdown");
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          red.classList.toggle("dropdown");
+        } else {
+          let green = document.querySelector(".confirmout");
+          green.classList.toggle("dropdown");
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+          green.classList.toggle("dropdown");
+        }
+      });
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* let localdataraw = localStorage.getItem("jsonData");
 let localdata = JSON.parse(localdataraw);
 
 if (localdata === null) {
   fetch("./storage.json")
     .then((response) => response.json())
-    .then((data) => {
+    .then((data) => { */
 
       /* READING FROM IPHONE */
 
-      let iphonestore = data.iphones;
+     /*  let iphonestore = data.iphones; */
 
       /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */
 
-      function fisherYatesShuffle(array) {
+      /* function fisherYatesShuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i + 1));
           [array[i], array[j]] = [array[j], array[i]];
@@ -57,10 +226,10 @@ if (localdata === null) {
           [array[i], array[j]] = [array[j], array[i]];
         }
         return array;
-      }
+      } */
 
       /* RANDOMIZE SAMSUNG */
-      fisherYatesShuffle(samsungstore);
+      /* fisherYatesShuffle(samsungstore);
 
       for (let i = 0; i < samsungstore.length; i++) {
         let appimage = samsungstore[i][0];
@@ -80,10 +249,10 @@ if (localdata === null) {
 
         document.querySelector(".prdt").innerHTML += boiler;
       }
-
-      const cartbut = document.querySelectorAll(".delcart");
+ */
+     /*  const cartbut = document.querySelectorAll(".delcart"); */
       /*  let dataFromLocal = localStorage.getItem("cartData"); */
-      let arrconv = Array.from(cartbut);
+     /*  let arrconv = Array.from(cartbut);
       arrconv.forEach(function (elem) {
         elem.addEventListener("click", async function () {
           this.classList.toggle("red");
@@ -140,11 +309,11 @@ if (localdata === null) {
     });
 } else {
 
-  let iphonestore = localdata.iphones;
+  let iphonestore = localdata.iphones; */
 
   /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */
 
-  function fisherYatesShuffle(array) {
+  /* function fisherYatesShuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -172,14 +341,14 @@ if (localdata === null) {
     document.querySelector(".prdt").innerHTML += boiler;
   }
 
-
+ */
   /* GETTING DATA FOR SAMSUNG PHONES */
 
-  let samsungstore = localdata.samsung;
+  /* let samsungstore = localdata.samsung; */
 
   /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */
 
-  function fisherYatesShufflesam(array) {
+  /* function fisherYatesShufflesam(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -260,3 +429,4 @@ if (localdata === null) {
     });
   });
 }
+ */
