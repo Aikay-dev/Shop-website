@@ -31,6 +31,7 @@ let samdata;
 let iphlength;
 let samlength;
 let sendImage;
+let dropdown = document.querySelector(".confirm");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -107,6 +108,9 @@ form.addEventListener("submit", (e) => {
             });
             form.reset();
           });
+          dropdown.classList.add("dropdown");
+          await new Promise((resolve) => setTimeout(resolve, 2500));
+          dropdown.classList.remove("dropdown");
         }
 
         getUrl();
