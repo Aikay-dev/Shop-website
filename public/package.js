@@ -18,22 +18,21 @@ const firebaseConfig = {
   appId: "1:139391464564:web:2be388f749b78b8c04cd21",
   measurementId: "G-CLNF0CJQEJ",
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 /* getting the storage */
-let storage = firebase.storage();
-let database = firebase.database();
-let form = document.querySelector(".picform");
+const storage = firebase.storage();
+const database = firebase.database();
+const form = document.querySelector(".picform");
 let iphdata;
 let samdata;
 let iphlength;
 let samlength;
 let sendImage;
-let dropdown = document.querySelector(".confirm");
+const dropdown = document.querySelector(".confirm");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (
     form.name.value.length == 0 ||
@@ -43,78 +42,73 @@ form.addEventListener("submit", (e) => {
     alert("fill in the empty boxes");
   } else {
     if (form.category.value == "iphone") {
-      let iphRefdata = database.ref("iphones");
+      const iphRefdata = database.ref("iphones");
 
-      iphRefdata.once("value").then(function (snapshot) {
+      try {
+        const snapshot = await iphRefdata.once("value");
         iphdata = snapshot.val();
-        iphlength = iphdata.length;
+        iphlength = iphdata ? iphdata.length : 0;
 
-        let fileitem = form.filename.files[0];
-        let filename = form.name.value;
-        console.log(form.filename.files[0].type);
-        console.log(form.category.value == "iphone");
+        const fileitem = form.filename.files[0];
+        const filename = form.name.value;
 
-        let storageRef = storage.ref("images/" + filename);
-        let uploadTask = storageRef.put(fileitem);
+        const storageRef = storage.ref("images/" + filename);
+        const uploadTask = storageRef.put(fileitem);
 
-        async function getUrl() {
-          await new Promise((resolve) => setTimeout(resolve, 3000));
+        await uploadTask;
+        const downloadURL = await storageRef.getDownloadURL();
 
-          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            console.log("File uploaded");
+        console.log("File uploaded");
+        const ref1 = database.ref("iphones");
+        const ref2 = ref1.child(iphlength);
 
-            let ref1 = database.ref("iphones");
-            let ref2 = ref1.child(iphlength);
-
-            ref2.set({
-              0: downloadURL,
-              1: form.price.value,
-              2: form.name.value,
-            });
-            form.reset();
-          });
-        }
-
-        getUrl();
-      });
+        ref2.set({
+          0: downloadURL,
+          1: form.price.value,
+          2: form.name.value,
+        });
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        alert("Failed to upload the image");
+      }
     } else {
-      let samRefdata = database.ref("samsung");
+      const samRefdata = database.ref("samsung");
 
-      samRefdata.once("value").then(function (snapshot) {
+      try {
+        const snapshot = await samRefdata.once("value");
         samdata = snapshot.val();
-        samlength = samdata.length;
+        samlength = samdata ? samdata.length : 0;
 
-        let fileitem = form.filename.files[0];
-        let filename = form.name.value;
-        console.log(form.filename.files[0].type);
-        console.log(form.category.value == "samsung");
+        const fileitem = form.filename.files[0];
+        const filename = form.name.value;
 
-        let storageRef = storage.ref("images/" + filename);
-        let uploadTask = storageRef.put(fileitem);
+        const storageRef = storage.ref("images/" + filename);
+        const uploadTask = storageRef.put(fileitem);
 
-        async function getUrl() {
-          await new Promise((resolve) => setTimeout(resolve, 3000));
+        await uploadTask;
+        const downloadURL = await storageRef.getDownloadURL();
 
-          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            console.log("File available at");
+        console.log("File available at");
+        const ref1 = database.ref("samsung");
+        const ref2 = ref1.child(samlength);
 
-            let ref1 = database.ref("samsung");
-            let ref2 = ref1.child(samlength);
+        ref2.set({
+          0: downloadURL,
+          1: form.price.value,
+          2: form.name.value,
+        });
 
-            ref2.set({
-              0: downloadURL,
-              1: form.price.value,
-              2: form.name.value,
-            });
-            form.reset();
-          });
-          dropdown.classList.add("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 2500));
-          dropdown.classList.remove("dropdown");
-        }
+        console.log("Object");
+        document.querySelector(".confirm").classList.add("dropdown");
+        await new Promise((resolve) => setTimeout(resolve, 2500));
+        document.querySelector(".confirm").classList.remove("dropdown");
 
-        getUrl();
-      });
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        alert("Failed to upload the image");
+      }
     }
   }
 });
