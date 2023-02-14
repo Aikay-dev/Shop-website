@@ -891,13 +891,13 @@ body {
     font-size: 10px;
   }
 
+  .addcart{
+    padding: 10px 25px;
+  }
+
   .caut{
     width: 100%;
   }
-
- /*  .addcart{
-    scale: 0.6;
-  } */
 
 }
 
