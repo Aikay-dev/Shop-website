@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(245,245,245);
 }
 
 .navone {
@@ -35,18 +35,7 @@ body {
   cursor: pointer;
 }
 
-#cartmain::after {
-  content: "0";
-  width: 10px;
-  height: 10px;
-  background-color: green;
-  position: absolute;
-  border-radius: 50%;
-  top: 20%;
-  text-align: center;
-  padding: 5px;
-  font-size: 10px;
-}
+
 
 .bar {
   display: block;
@@ -100,6 +89,13 @@ body {
   height: 58px;
 }
 
+.appsectext{
+  background-color: white;
+  padding: 0 30px;
+  border-radius: 20px;
+background-color: rgb(195,222,240);
+}
+
 .secnames {
   text-align: center;
   font-weight: bolder;
@@ -108,7 +104,8 @@ body {
 }
 
 .appphones {
-  border: 1px solid rgb(153, 151, 151);
+ 
+  border-radius: 5px;
   height: 300px;
   min-width: 230px;
   max-width: 230px;
@@ -121,6 +118,18 @@ body {
 
 .appphones:hover {
   animation: cards 0.1s ease-in-out forwards;
+  box-shadow: 0px 0px 5px grey;
+}
+
+@keyframes cards {
+  from{
+    scale: 1.0;
+  }
+
+  to{
+    scale: 1.01;
+    
+  }
 }
 
 .iphnbanhol {
@@ -167,13 +176,11 @@ body {
 }
 
 .samsec {
-  border-top: 1px solid rgb(78, 78, 78);
-  border-bottom: 1px solid rgb(78, 78, 78);
+margin-top: 10px;
 }
 
-.appsec {
-  border-top: 1px solid rgb(78, 78, 78);
-  border-bottom: 1px solid rgb(78, 78, 78);
+#samid{
+  margin-top: 10px;
 }
 
 .samicon {
@@ -183,7 +190,6 @@ body {
 .samfullsec {
   width: 100%;
   padding: 20px;
-  border: 1px solid grey;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -193,7 +199,6 @@ body {
 .appfullsec {
   width: 100%;
   padding: 20px;
-  border: 1px solid grey;
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -499,6 +504,15 @@ body {
 
 .classif :nth-child(3):hover {
   background-color: red;
+}
+
+.iphonehome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: repeat;
+  background-size: contain;
+  background-color: rgb(195,222,240);
 }
 
 .red {
@@ -945,6 +959,21 @@ body {
   .fullbanholder2 {
     height: 120px;
   }
+
+  .appfullsec{
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .samfullsec{
+    width: 100%;
+    gap: 2px;
+    padding: 10px 0px;
+  }
+
+
 }
 
 @media screen and (max-width: 330px) {
