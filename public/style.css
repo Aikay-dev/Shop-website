@@ -81,7 +81,7 @@ body {
   padding: 30px;
   width: 100%;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
 }
 
@@ -103,10 +103,30 @@ background-color: rgb(195,222,240);
   padding: 10px;
 }
 
+.fullbanholder {
+  background-color: rgb(29,29,27);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appsec{
+  background-image: url(./apple-1-logo-png-transparent.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.samsec{
+  background-image: url(./original-samsung-logo-10.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .appphones {
- 
+
   border-radius: 5px;
-  height: 300px;
+  height: 320px;
   min-width: 230px;
   max-width: 230px;
   position: relative;
@@ -137,14 +157,14 @@ background-color: rgb(195,222,240);
 }
 
 .fullbanholder {
-  background-color: rgb(20, 40, 160);
+  background-color: rgb(29,29,27);
 }
 
 .appph {
   padding: 30px;
   width: 100%;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
 }
 
@@ -194,6 +214,9 @@ margin-top: 10px;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./NicePng_samsung-logo-png_23376.png);
 }
 
 .appfullsec {
@@ -203,6 +226,9 @@ margin-top: 10px;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./SeekPng.com_apple-logo-png_97323.png");
 }
 
 .navhref {
@@ -330,7 +356,7 @@ margin-top: 10px;
 
 .addcart {
   text-align: right;
-  background-color: gray;
+  border: 3px solid rgb(195,222,240);
   padding: 15px 30px;
   display: flex;
   justify-content: center;
@@ -343,11 +369,12 @@ margin-top: 10px;
 }
 
 .addcart:hover {
-  background-color: green;
+  background-color: rgb(195,222,240);
+  color: rgb(27, 27, 27);
 }
 
 .green {
-  background-color: green;
+  background-color: rgb(155, 203, 235);
 }
 
 .sambanner {
@@ -709,6 +736,13 @@ margin-top: 10px;
   }
 }
 
+@media screen and (max-width: 790px) {
+  .fullbanholder>img {
+    width: 100%;
+  }
+
+}
+
 @media screen and (max-width: 690px) {
   .fullbanholder2 {
     width: 100%;
@@ -831,9 +865,12 @@ margin-top: 10px;
     padding-bottom: 25px;
   }
 
+  .fullbanholder>img {
+    height: 150px;
+  }
+
   .addcart {
     text-align: right;
-    background-color: gray;
     padding: 15px 30px;
     display: flex;
     justify-content: center;
@@ -853,7 +890,7 @@ margin-top: 10px;
 
 @media screen and (max-width: 535px) {
   .appphones {
-    height: 270px;
+    height: 280px;
     min-width: 180px;
     max-width: 180px;
     font-size: 15px;
@@ -882,7 +919,7 @@ margin-top: 10px;
 
   .appphones {
     font-size: 5px;
-    height: 230px;
+    height: 250px;
     min-width: 150px;
     max-width: 150px;
     font-size: 15px;
@@ -949,6 +986,10 @@ margin-top: 10px;
   .caut {
     width: 100%;
   }
+}
+
+.fullbanholder>img {
+  height: 120px;
 }
 
 .fullbanholder2 {
