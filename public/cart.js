@@ -34,7 +34,7 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
 
     boiler = `<div class="cartphones" data-value ="${appimage}">
     <div class ="cartimgh">
-        <img src="./${appimage}" height = "60%">
+        <img src="${appimage}" height = "60%">
     </div>
     <div class="cartdesc">
         <div class = "deschol">

@@ -35,7 +35,7 @@ body {
   cursor: pointer;
 }
 
-#cartmain::after{
+#cartmain::after {
   content: "0";
   width: 10px;
   height: 10px;
@@ -46,7 +46,6 @@ body {
   text-align: center;
   padding: 5px;
   font-size: 10px;
-
 }
 
 .bar {
@@ -151,16 +150,15 @@ body {
   align-items: center;
 }
 
-.secbanhol{
+.secbanhol {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(248,243,240);
+  background-color: rgb(248, 243, 240);
 }
 
-.fullbanholder2{
+.fullbanholder2 {
   height: 200px;
-  
 }
 .viewh {
   display: flex;
@@ -234,7 +232,7 @@ body {
 
 .delcart {
   text-align: right;
-  background-color: gray;
+  background-color: rgb(255, 0, 0);
   padding: 15px 30px;
   display: flex;
   justify-content: center;
@@ -503,6 +501,10 @@ body {
   background-color: red;
 }
 
+.red {
+  background-color: red;
+}
+
 .forcpage {
   background-image: url(./empty_cart.webp);
   background-size: contain;
@@ -626,8 +628,6 @@ body {
   .cartsec {
     width: 95%;
   }
-
-
 }
 
 @media screen and (max-width: 1020px) {
@@ -681,8 +681,6 @@ body {
 }
 
 @media screen and (max-width: 850px) {
-
-
   .inpi {
     width: 500px;
   }
@@ -698,6 +696,10 @@ body {
 }
 
 @media screen and (max-width: 690px) {
+  .fullbanholder2 {
+    width: 100%;
+  }
+
   .appbann > img {
     width: 100%;
   }
@@ -731,8 +733,6 @@ body {
     margin: 0;
     width: 120px;
   }
-
-
 
   .inpi {
     width: 300px;
@@ -808,7 +808,7 @@ body {
     padding-top: 10px;
   }
 
-  .prdt>div{
+  .prdt > div {
     height: 270px;
     min-width: 200px;
     max-width: 200px;
@@ -817,7 +817,7 @@ body {
     padding-bottom: 25px;
   }
 
-  .addcart{
+  .addcart {
     text-align: right;
     background-color: gray;
     padding: 15px 30px;
@@ -832,9 +832,22 @@ body {
     white-space: nowrap;
   }
 
-
   .inpi {
     width: 200px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .appphones {
+    height: 270px;
+    min-width: 180px;
+    max-width: 180px;
+    font-size: 15px;
+  }
+
+  .addcart {
+    font-size: 15px;
+    padding: 10px 25px;
   }
 }
 
@@ -842,11 +855,36 @@ body {
   .iphnbanhol > img {
     height: 200px;
   }
+
+  .fullbanholder2 {
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 450px) {
   .fullbanholder > img {
     height: 160px;
+  }
+
+  .appphones {
+    font-size: 5px;
+    height: 230px;
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 15px;
+  }
+
+  .addcart {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .prdet {
+    font-size: 10px;
+  }
+
+  .samfullsec {
+    gap: 5px;
   }
 }
 
@@ -872,7 +910,6 @@ body {
   }
 
   .prdt {
-   
     justify-content: center;
     align-items: center;
   }
@@ -881,7 +918,7 @@ body {
     width: 100%;
   }
 
-  .prdt>div{
+  .prdt > div {
     height: 220px;
     min-width: 150px;
     max-width: 150px;
@@ -891,14 +928,23 @@ body {
     font-size: 10px;
   }
 
-  .addcart{
-    padding: 10px 25px;
+  .addcart {
+    padding: 5px 20px;
   }
 
-  .caut{
+  .caut {
     width: 100%;
   }
+}
 
+.fullbanholder2 {
+  height: 150px;
+}
+
+@media screen and (max-width: 370px) {
+  .fullbanholder2 {
+    height: 120px;
+  }
 }
 
 @media screen and (max-width: 330px) {

@@ -54,172 +54,64 @@ for (let i = 0; i < iphdata.length; i++) {
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="addcart" data-value = "${appimage},${appname},${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
   </div>
   </div>`;
 
   document.querySelector(".appfullsec").innerHTML += boiler;
 }
 
-
+let cartstore = [];
+let defdataset;
+let arr;
+let dataFromLocal = localStorage.getItem("cartData");
 const cartbut = document.querySelectorAll(".addcart");
-    let arrconv = Array.from(cartbut);
-    arrconv.forEach(function (elem) {
-      elem.addEventListener("click", async function () {
-        this.classList.toggle("green");
-        
-        if (this.classList.contains("green")) {
+let arrconv = Array.from(cartbut);
+arrconv.forEach(function (elem) {
+  elem.addEventListener("click", async function () {
+    this.classList.toggle("green");
+    defdataset = this.getAttribute("data-value");
+    arr = defdataset.split("''");
 
-          let red = document.querySelector(".confirm");
-          red.classList.toggle("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          red.classList.toggle("dropdown");
-        } else {
-          let green = document.querySelector(".confirmout");
-          green.classList.toggle("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          green.classList.toggle("dropdown");
-        }
-      });
-    })
+    if (this.classList.contains("green")) {
+      let red = document.querySelector(".confirm");
+      red.classList.toggle("dropdown");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* fetch("./storage.json")
-  .then((response) => response.json())
-  .then((data) => {
-    let datafromlocal;
-    if (localStorage.getItem("jsonData")) {
-      data = localStorage.getItem("jsonData");
-      datafromlocal = JSON.parse(data);
-      console.log(datafromlocal.samsung);
-    } else {
-      datafromlocal = data;
-      console.log(datafromlocal);
-    }
-
-    let iphonestore = [];
-
-    for (let i = 0; i < datafromlocal.iphones.length; i++) {
-      iphonestore.push(datafromlocal.iphones[i]);
-    } */
-
-    /* RANDOMIZING THE IPHONE STORAGE FOR HOMEPAGE */
-
-    /* function fisherYatesShuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+      let dataFromLocal = localStorage.getItem("cartData");
+      if (dataFromLocal === null) {
+        cartstore.push(arr);
+        console.log(cartstore);
+        console.log(defdataset);
+        localStorage.setItem("cartData", JSON.stringify(cartstore));
+      } else {
+        const jsonString = localStorage.getItem("cartData");
+        const myData = JSON.parse(jsonString);
+        console.log(myData);
+        myData.push(arr);
+        console.log(defdataset);
+        localStorage.setItem("cartData", JSON.stringify(myData));
       }
-      return array;
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      red.classList.toggle("dropdown");
+    } else {
+      let green = document.querySelector(".confirmout");
+      green.classList.toggle("dropdown");
+
+      const jsonString = localStorage.getItem("cartData");
+      const myData = JSON.parse(jsonString);
+      console.log(myData);
+      console.log(arr);
+      const index = myData.findIndex((arr) => arr[0] === arr[0]);
+      if (index == -1) {
+        console.log("not found");
+      } else {
+        console.log("found");
+        myData.splice(index, 1);
+        console.log(myData);
+      }
+      localStorage.setItem("cartData", JSON.stringify(myData));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      green.classList.toggle("dropdown");
     }
-    let shuffiphone = fisherYatesShuffle(iphonestore);
-
-    for (let i = 0; i < iphonestore.length; i++) {
-      let appimage = iphonestore[i][0];
-      let appname = iphonestore[i][1];
-      let appprice = iphonestore[i][2];
-
-      let boiler = `<div class="appphones">
-      <img src="./${appimage}">
-      <div class="prdet">
-          <p>${appname}</p>
-          <p class="price">
-              <span>₦</span><span class="money">${appprice}</span>
-          </p>
-          <p class="addcart" data-value = "${appimage},${appname},${appprice}">ADD TO CART<i class="fa-solid fa-cart-plus" value = "hello"></i></p>
-      </div>
-      </div>`;
-
-      document.querySelector(".appfullsec").innerHTML += boiler;
-    }
-
-    let cartstore = [];
-
-    const cartbut = document.querySelectorAll(".addcart");
-    let defdataset;
-    let dataFromLocal = localStorage.getItem("cartData");
-    let arrconv = Array.from(cartbut);
-    arrconv.forEach(function (elem) {
-      elem.addEventListener("click", async function () {
-        this.classList.toggle("green");
-        let firstdata = this.dataset.value;
-        let newdata = firstdata.split(",");
-        console.log(newdata);
-        defdataset = newdata;
-        console.log(this.dataset.value);
-        if (this.classList.contains("green")) {
-          if (dataFromLocal === null) {
-            const found = cartstore.find((element) => element == defdataset);
-            console.log(found);
-            cartstore.push(defdataset);
-            localStorage.setItem("cartData", JSON.stringify(cartstore));
-            console.log(cartstore);
-          } else {
-            const found = cartstore.find((element) => element == defdataset);
-            console.log(found);
-            cartstore.push(defdataset);
-            localStorage.setItem("cartData", JSON.stringify(cartstore));
-            console.log(cartstore);
-          }
-
-          let red = document.querySelector(".confirm");
-          red.classList.toggle("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          red.classList.toggle("dropdown");
-        } else {
-          let index = cartstore.indexOf(defdataset);
-          cartstore.splice(index, 1);
-          console.log(cartstore);
-          localStorage.setItem("cartData", JSON.stringify(cartstore));
-          console.log(this.dataset.value);
-          let green = document.querySelector(".confirmout");
-          green.classList.toggle("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          green.classList.toggle("dropdown");
-        }
-      });
-    });
-  })
-
-
-  .catch((error) => {
-    console.error("Error:", error);
   });
- */
+});

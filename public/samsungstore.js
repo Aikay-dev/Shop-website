@@ -54,7 +54,7 @@ for (let i = 0; i < samdata.length; i++) {
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="addcart" data-value = "${appimage},${appname},${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
   </div>
   </div>`;
 
@@ -62,21 +62,56 @@ for (let i = 0; i < samdata.length; i++) {
 }
 
 
+let cartstore = [];
+let defdataset;
+let arr
+let dataFromLocal = localStorage.getItem("cartData")
 const cartbut = document.querySelectorAll(".addcart");
     let arrconv = Array.from(cartbut);
     arrconv.forEach(function (elem) {
       elem.addEventListener("click", async function () {
         this.classList.toggle("green");
+        defdataset = this.getAttribute('data-value');
+        arr = defdataset.split("''");
         
         if (this.classList.contains("green")) {
 
           let red = document.querySelector(".confirm");
           red.classList.toggle("dropdown");
-          await new Promise((resolve) => setTimeout(resolve, 3000));
+
+          let dataFromLocal = localStorage.getItem("cartData")
+          if (dataFromLocal === null) {
+            cartstore.push(arr);
+            console.log(cartstore);
+            console.log(defdataset);
+            localStorage.setItem("cartData", JSON.stringify(cartstore));
+          } else {
+            const jsonString = localStorage.getItem('cartData');
+            const myData = JSON.parse(jsonString);
+            console.log(myData);
+            myData.push(arr);
+            console.log(defdataset);
+            localStorage.setItem("cartData", JSON.stringify(myData));
+          }
+          await new Promise((resolve) => setTimeout(resolve, 2500));
           red.classList.toggle("dropdown");
         } else {
           let green = document.querySelector(".confirmout");
           green.classList.toggle("dropdown");
+          
+          const jsonString = localStorage.getItem('cartData');
+          const myData = JSON.parse(jsonString);
+          console.log(myData);
+          console.log(arr);
+          const index = myData.findIndex(arr => arr[0] === arr[0])
+          if(index == -1){
+            console.log("not found");
+          }else{
+            console.log("found");
+            myData.splice(index, 1)
+            console.log(myData);
+          }
+          localStorage.setItem("cartData", JSON.stringify(myData));
           await new Promise((resolve) => setTimeout(resolve, 3000));
           green.classList.toggle("dropdown");
         }
