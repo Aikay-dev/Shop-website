@@ -1034,6 +1034,10 @@ margin-top: 10px;
     width: 300px;
   }
 
+  .formcont{
+    width: 95%;
+  }
+
   .ex {
     margin-left: 40%;
   }
@@ -1111,5 +1115,13 @@ margin-top: 10px;
   .addp,
   .remp {
     width: 100%;
+  }
+
+  .forbut{
+    width: 95%;
+  }
+
+  .surr{
+    width: 90%;
   }
 }
