@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCT MANAGEMENT</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a388628afc.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
 </head>
 <body>
@@ -24,26 +23,21 @@
             </div>
     </nav>
     <div class="faker"></div>
-    <p class="secnames"><span class="samicon"><i class="fa-solid fa-screwdriver-wrench"></i></span></i>PRODUCT MANAGEMENT</p>
-    <div class="container">
-        <a href="./add-product.html" class = "linkdef">
-            <div class="addp">
-                <div class="addicon">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-                <p>ADD PRODUCT</p>
+    <div class="faker"></div>
+        <form action="" class="formcont">
+            <h1 class="fhead">Login</h1>
+            <div class="fem">
+                <label for="">EMAIL</label>
+                <input type="text" name="email" placeholder="Put your Email here" class="filform">
             </div>
-        </a>
-        <a href="./remove-product.html" class ="linkdef">
-            <div class="remp">
-                <div class = "remicon">
-                    <i class="fa-solid fa-trash-can"></i>
-                </div>
-                <p>REMOVE PRODUCT</p>
+            <div class="fpas">
+                <label for="">PASSWORD</label>
+                <input type="password" name="password" placeholder="Put your Password here" class="filform ha">
             </div>
-        </a>
-    </div>
-    <script src="./admin.js"></script>
-    </section>
+            <div class="surr">
+                <button class="forbut">Login</button>
+            </div>
+        </form>
+        <script src="./admin.js"></script>
 </body>
 </html>
