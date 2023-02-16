@@ -16,7 +16,7 @@ let appprice;
 
 let tester = document.querySelector(".cpage");
 let lastp = document.querySelector(".totalsec");
-let thetop = document.querySelector(".surr");
+let thetop = document.querySelector(".surrcart");
 
 if (localStorage.getItem("cartData") === null || finaldata == "") {
   tester.classList.add("forcpage");
@@ -55,6 +55,12 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
     document.querySelector(".cpage").innerHTML += boiler;
   }
 }
+
+let clearer = document.querySelector("#clearall")
+let cartedit = document.querySelector(".classif")
+clearer.addEventListener("click", () => {
+  cartedit.classList.add("navul")
+})
 
 let clbt = document.querySelector("#clearall");
 const cphones = document.querySelectorAll(".cartphones");
