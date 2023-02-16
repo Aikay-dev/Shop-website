@@ -1034,6 +1034,11 @@ margin-top: 10px;
     gap: 5px;
     padding: 0;
   }
+
+  .appfullsec {
+    gap: 5px;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -1100,6 +1105,11 @@ margin-top: 10px;
 @media screen and (max-width: 400px) {
 
   .appph{
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  .samph{
     gap: 5px;
     padding: 10px 0;
   }
