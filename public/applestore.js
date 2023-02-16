@@ -28,7 +28,6 @@ const database = firebase.database();
 const iphRefdata = database.ref("iphones");
 const snapshot = await iphRefdata.once("value");
 let iphdata = snapshot.val();
-console.log(iphdata);
 
 /* Shuffle using fisher yates method */
 
@@ -80,15 +79,11 @@ arrconv.forEach(function (elem) {
       let dataFromLocal = localStorage.getItem("cartData");
       if (dataFromLocal === null) {
         cartstore.push(arr);
-        console.log(cartstore);
-        console.log(defdataset);
         localStorage.setItem("cartData", JSON.stringify(cartstore));
       } else {
         const jsonString = localStorage.getItem("cartData");
         const myData = JSON.parse(jsonString);
-        console.log(myData);
         myData.push(arr);
-        console.log(defdataset);
         localStorage.setItem("cartData", JSON.stringify(myData));
       }
       await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -99,15 +94,10 @@ arrconv.forEach(function (elem) {
 
       const jsonString = localStorage.getItem("cartData");
       const myData = JSON.parse(jsonString);
-      console.log(myData);
-      console.log(arr);
       const index = myData.findIndex((arr) => arr[0] === arr[0]);
       if (index == -1) {
-        console.log("not found");
       } else {
-        console.log("found");
         myData.splice(index, 1);
-        console.log(myData);
       }
       localStorage.setItem("cartData", JSON.stringify(myData));
       await new Promise((resolve) => setTimeout(resolve, 3000));

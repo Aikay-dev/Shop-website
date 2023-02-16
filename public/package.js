@@ -58,7 +58,6 @@ form.addEventListener("submit", async (e) => {
         await uploadTask;
         const downloadURL = await storageRef.getDownloadURL();
 
-        console.log("File uploaded");
         const ref1 = database.ref("iphones");
         const ref2 = ref1.child(iphlength);
 
@@ -89,7 +88,6 @@ form.addEventListener("submit", async (e) => {
         await uploadTask;
         const downloadURL = await storageRef.getDownloadURL();
 
-        console.log("File available at");
         const ref1 = database.ref("samsung");
         const ref2 = ref1.child(samlength);
 
@@ -99,7 +97,6 @@ form.addEventListener("submit", async (e) => {
           2: form.name.value,
         });
 
-        console.log("Object");
         document.querySelector(".confirm").classList.add("dropdown");
         await new Promise((resolve) => setTimeout(resolve, 2500));
         document.querySelector(".confirm").classList.remove("dropdown");

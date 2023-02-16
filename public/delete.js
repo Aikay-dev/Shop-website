@@ -28,7 +28,6 @@ const database = firebase.database();
 const iphRefdata = database.ref("iphones");
 const snapshot = await iphRefdata.once("value");
 let iphdata = snapshot.val();
-console.log(iphdata);
 
 /* Shuffle using fisher yates method */
 
@@ -65,7 +64,6 @@ for (let i = 0; i < iphdata.length; i++) {
 const samRefdata = database.ref("samsung");
 const snapshotsam = await samRefdata.once("value");
 let samdata = snapshotsam.val();
-console.log(samdata);
 
 /* Shuffle using fisher yates method */
 
@@ -108,7 +106,6 @@ arrconv.forEach(function (elem) {
     green.classList.toggle("dropdown");
     let cardd = elem.getAttribute("data-value");
     arr = cardd.split("''");
-    console.log(arr);
     /* const itemRef = firebase.database().ref('image/123'); */
     const databaseRef = firebase.database().ref();
 
@@ -133,8 +130,5 @@ arrconv.forEach(function (elem) {
         dat2del.remove();
       }
     }
-
-    console.log(samdata);
-    console.log(iphdata);
   });
 });

@@ -28,7 +28,6 @@ const database = firebase.database();
 const samRefdata = database.ref("samsung");
 const snapshot = await samRefdata.once("value");
 let samdata = snapshot.val();
-console.log(samdata);
 
 /* Shuffle using fisher yates method */
 
@@ -61,101 +60,51 @@ for (let i = 0; i < samdata.length; i++) {
   document.querySelector(".samfullsec").innerHTML += boiler;
 }
 
-
 let cartstore = [];
 let defdataset;
-let arr
-let dataFromLocal = localStorage.getItem("cartData")
+let arr;
+let dataFromLocal = localStorage.getItem("cartData");
 const cartbut = document.querySelectorAll(".addcart");
-    let arrconv = Array.from(cartbut);
-    arrconv.forEach(function (elem) {
-      elem.addEventListener("click", async function () {
-        this.classList.toggle("green");
-        defdataset = this.getAttribute('data-value');
-        arr = defdataset.split("''");
-        
-        if (this.classList.contains("green")) {
+let arrconv = Array.from(cartbut);
+arrconv.forEach(function (elem) {
+  elem.addEventListener("click", async function () {
+    this.classList.toggle("green");
+    defdataset = this.getAttribute("data-value");
+    arr = defdataset.split("''");
 
-          let red = document.querySelector(".confirm");
-          red.classList.toggle("dropdown");
+    if (this.classList.contains("green")) {
+      let red = document.querySelector(".confirm");
+      red.classList.toggle("dropdown");
 
-          let dataFromLocal = localStorage.getItem("cartData")
-          if (dataFromLocal === null) {
-            cartstore.push(arr);
-            console.log(cartstore);
-            console.log(defdataset);
-            localStorage.setItem("cartData", JSON.stringify(cartstore));
-          } else {
-            const jsonString = localStorage.getItem('cartData');
-            const myData = JSON.parse(jsonString);
-            console.log(myData);
-            myData.push(arr);
-            console.log(defdataset);
-            localStorage.setItem("cartData", JSON.stringify(myData));
-          }
-          await new Promise((resolve) => setTimeout(resolve, 2500));
-          red.classList.toggle("dropdown");
-        } else {
-          let green = document.querySelector(".confirmout");
-          green.classList.toggle("dropdown");
-          
-          const jsonString = localStorage.getItem('cartData');
-          const myData = JSON.parse(jsonString);
-          console.log(myData);
-          console.log(arr);
-          const index = myData.findIndex(arr => arr[0] === arr[0])
-          if(index == -1){
-            console.log("not found");
-          }else{
-            console.log("found");
-            myData.splice(index, 1)
-            console.log(myData);
-          }
-          localStorage.setItem("cartData", JSON.stringify(myData));
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-          green.classList.toggle("dropdown");
-        }
-      });
-    })
+      let dataFromLocal = localStorage.getItem("cartData");
+      if (dataFromLocal === null) {
+        cartstore.push(arr);
+        localStorage.setItem("cartData", JSON.stringify(cartstore));
+      } else {
+        const jsonString = localStorage.getItem("cartData");
+        const myData = JSON.parse(jsonString);
+        myData.push(arr);
+        localStorage.setItem("cartData", JSON.stringify(myData));
+      }
+      await new Promise((resolve) => setTimeout(resolve, 2500));
+      red.classList.toggle("dropdown");
+    } else {
+      let green = document.querySelector(".confirmout");
+      green.classList.toggle("dropdown");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      const jsonString = localStorage.getItem("cartData");
+      const myData = JSON.parse(jsonString);
+      const index = myData.findIndex((arr) => arr[0] === arr[0]);
+      if (index == -1) {
+      } else {
+        myData.splice(index, 1);
+      }
+      localStorage.setItem("cartData", JSON.stringify(myData));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      green.classList.toggle("dropdown");
+    }
+  });
+});
 
 /* fetch("./storage.json")
   .then((response) => response.json())
@@ -168,7 +117,7 @@ const cartbut = document.querySelectorAll(".addcart");
       datafromlocal = data;
     } */
 
-    /* Reading samsung from json FOR HOME PAGE*/
+/* Reading samsung from json FOR HOME PAGE*/
 
 /*     let samsungstore = [];
     for (let i = 0; i < datafromlocal.samsung.length; i++) {

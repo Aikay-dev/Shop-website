@@ -27,7 +27,6 @@ const database = firebase.database();
 const iphRefdata = database.ref("iphones");
 const snapshot = await iphRefdata.once("value");
 let iphdata = snapshot.val();
-console.log(iphdata);
 
 /* Shuffle using fisher yates method */
 
@@ -46,8 +45,6 @@ let iphonestore = [];
 for (let i = 0; i < 5; i++) {
   iphonestore.push(iphdata[i]);
 }
-
-console.log(iphonestore);
 
 /* Reading from array and inserting into inner html */
 for (let i = 0; i < iphonestore.length; i++) {
@@ -75,7 +72,6 @@ for (let i = 0; i < iphonestore.length; i++) {
 const samRefdata = database.ref("samsung");
 const samsnapshot = await samRefdata.once("value");
 let samdata = samsnapshot.val();
-console.log(samdata);
 
 /* Shuffle using fisher yates method */
 
@@ -94,8 +90,6 @@ let samsungstore = [];
 for (let i = 0; i < 5; i++) {
   samsungstore.push(samdata[i]);
 }
-
-console.log(samsungstore);
 
 /* Reading from array and inserting into inner html */
 for (let i = 0; i < samsungstore.length; i++) {
@@ -136,13 +130,10 @@ arrconv.forEach(function (elem) {
       red.classList.toggle("dropdown");
       if (dataFromLocal === null) {
         cartstore.push(arr);
-        console.log(cartstore);
-        console.log(defdataset);
         localStorage.setItem("cartData", JSON.stringify(cartstore));
       } else {
         const jsonString = localStorage.getItem("cartData");
         const myData = JSON.parse(jsonString);
-        console.log(myData);
         myData.push(arr);
         localStorage.setItem("cartData", JSON.stringify(myData));
       }
@@ -154,15 +145,10 @@ arrconv.forEach(function (elem) {
 
       const jsonString = localStorage.getItem("cartData");
       const myData = JSON.parse(jsonString);
-      console.log(myData);
-      console.log(arr);
       const index = myData.findIndex((arr) => arr[0] === arr[0]);
       if (index == -1) {
-        console.log("not found");
       } else {
-        console.log("found");
         myData.splice(index, 1);
-        console.log(myData);
       }
       localStorage.setItem("cartData", JSON.stringify(myData));
       await new Promise((resolve) => setTimeout(resolve, 3000));
