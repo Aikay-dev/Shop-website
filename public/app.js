@@ -121,6 +121,8 @@ const cartbut = document.querySelectorAll(".addcart");
 let arrconv = Array.from(cartbut);
 arrconv.forEach(function (elem) {
   elem.addEventListener("click", async function () {
+    console.log(this);
+    console.log(arrconv);
     this.classList.toggle("green");
     defdataset = this.getAttribute("data-value");
     arr = defdataset.split("''");

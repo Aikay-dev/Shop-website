@@ -40,15 +40,15 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
         <div class = "deschol">
             <p class = "cartpname">${appname}</p>
             <p class="priceca">
-                <span>₦</span><span class="money">${appprice}</span>
+                <span>₦</span><span class="money" id = "defcash">${appprice}</span>
             </p>
             <input class ="cartnum" type = "number" value = "1"></input>
             <p class="tprice">
-                <span>₦</span><span class="money">${appprice}</span>
+                <span>₦</span><span class="money" id = "cumlcash">${appprice}</span>
             </p>
             
         </div>
-        <div class = "ex"><i class="fa-regular fa-circle-xmark"></i></div>
+        <div class = "ex"><i class="fa-regular fa-circle-xmark hidex"></i></div>
     </div>
     </div>`;
 
@@ -56,11 +56,11 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
   }
 }
 
-let clearer = document.querySelector("#clearall")
-let cartedit = document.querySelector(".classif")
+let clearer = document.querySelector("#clearall");
+let cartedit = document.querySelector(".classif");
 clearer.addEventListener("click", () => {
-  cartedit.classList.add("navul")
-})
+  cartedit.classList.add("navul");
+});
 
 let clbt = document.querySelector("#clearall");
 const cphones = document.querySelectorAll(".cartphones");
@@ -78,13 +78,35 @@ clbt.addEventListener("click", async function () {
   finaldata = [];
   localStorage.setItem("cartData", JSON.stringify(finaldata));
 });
-
-const cartbut = document.querySelectorAll(".ex");
+let cartbut = document.querySelectorAll(".hidex");
+let culfirst = document.querySelectorAll("#cumlcash");
 let defdataset;
 let arrconv = Array.from(cartbut);
 let cartbox = document.querySelector(".cpage");
 arrconv.forEach(function (elem) {
   elem.addEventListener("click", async function () {
+    let exclose = elem.closest(".cartdesc");
+
+    let subtcash = exclose.querySelector("#cumlcash").innerHTML;
+    const defnum = parseInt(subtcash.replace(/,/g, ""));
+    console.log(defnum);
+    let totfex = document.querySelector(".totalcash").innerHTML;
+    const defnum2 = parseInt(totfex.replace(/,/g, ""));
+    console.log(defnum2);
+    let finalcalc = defnum2 - defnum;
+    let readytot = finalcalc.toLocaleString();
+    document.querySelector(".totalcash").innerHTML = readytot;
+    let cansubt = document.querySelector(".subt").innerHTML;
+    const defnum3 = parseInt(cansubt.replace(/,/g, ""));
+    console.log(defnum3);
+    let subcalc = defnum3 - defnum;
+    let readysub = subcalc.toLocaleString();
+    document.querySelector(".subt").innerHTML = readysub;
+    let shipdel = document.querySelector(".shipper").innerHTML;
+    const defnum4 = parseInt(shipdel.replace(/,/g, ""));
+    let delnew = defnum4 - 1300;
+    document.querySelector(".shipper").innerHTML = delnew;
+
     defdataset = this.dataset.value;
 
     const parent = document.querySelector(".cartsec");
@@ -122,4 +144,72 @@ arrconv.forEach(function (elem) {
       localStorage.setItem("cartData", JSON.stringify(finaldata));
     }
   });
+});
+
+const cartwhole = document.querySelectorAll(".cartphones");
+let numconv = Array.from(cartwhole);
+let subt = document.querySelector(".subt").innerHTML;
+let numbubt = +subt;
+let allmon = document.querySelectorAll("#cumlcash");
+let allmonconv = Array.from(allmon);
+let subdarr = [];
+let ship = document.querySelector(".shipper").innerHTML;
+
+console.log(ship);
+
+function cartstart() {
+  numconv.forEach(function (elem) {
+    console.log(allmonconv);
+    const defcash = elem.querySelector(".money").innerHTML;
+    const defnum = parseInt(defcash.replace(/,/g, ""));
+    const defval = elem.querySelector(".cartnum").value;
+    let defvalnum = +defval;
+
+    let helpcuml = parseInt(defnum * defvalnum).toLocaleString();
+    elem.querySelector("#cumlcash").innerHTML = helpcuml;
+  });
+
+  for (let i = 0; i < allmonconv.length; i++) {
+    let firstval = allmonconv[i].innerHTML;
+    const defnum = parseInt(firstval.replace(/,/g, ""));
+    subdarr.push(defnum);
+    console.log(defnum);
+  }
+
+  let sum = 0;
+  for (let i = 0; i < subdarr.length; i++) {
+    sum += subdarr[i];
+  }
+  document.querySelector(".subt").innerHTML = sum.toLocaleString();
+
+  console.log(finaldata);
+  document.querySelector(".shipper").innerHTML = parseInt(
+    finaldata.length * 1300
+  ).toLocaleString();
+
+  document.querySelector(".shipper").value =
+    document.querySelector(".shipper").innerHTML;
+
+  document.querySelector(".subt").value =
+    document.querySelector(".subt").innerHTML;
+  console.log(document.querySelector(".subt").value);
+
+  let subtv = document.querySelector(".subt").value;
+  let shipv = document.querySelector(".shipper").value;
+  const defnum = parseInt(subtv.replace(/,/g, ""));
+  const defnum2 = parseInt(shipv.replace(/,/g, ""));
+
+  document.querySelector(".totalcash").innerHTML = parseInt(
+    defnum + defnum2
+  ).toLocaleString();
+}
+
+cartstart();
+
+numconv.forEach(function (elem) {
+  elem.addEventListener("change", function () {
+    
+  });
+
+  
 });
