@@ -874,6 +874,25 @@ margin-top: 10px;
   .container {
     flex-direction: column;
   }
+
+  .bought, .bought>img{
+    width: 95%;
+  }
+
+  .bought>img{
+    display: flex;
+    margin: auto;
+  }
+
+  .bought::after{
+    content: "X";
+    position: absolute;
+    font-size: 20px;
+    font-weight: bolder;
+    left: 91%;
+    top: 3%;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 620px) {
