@@ -539,6 +539,26 @@ margin-top: 10px;
   position: relative;
 }
 
+.bought{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: none;
+  cursor: pointer;
+}
+
+.bought::after{
+  content: "X";
+  position: absolute;
+  font-size: 20px;
+  font-weight: bolder;
+  left: 96%;
+  top: 3%;
+  cursor: pointer;
+}
+
 .cartimgh {
   display: flex;
   align-items: center;
@@ -548,7 +568,6 @@ margin-top: 10px;
 }
 
 .cartdesc {
-  /* padding-top: 30px; */
   margin: auto 0;
 }
 
