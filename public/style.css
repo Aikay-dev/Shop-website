@@ -52,12 +52,13 @@ body {
   background-color: green;
   color: white;
   width: 200px;
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
   border-radius: 10px;
+  display: none;
 }
 
 .confirmout {
@@ -65,16 +66,19 @@ body {
   background-color: rgb(255, 0, 0);
   color: white;
   width: 200px;
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
   border-radius: 10px;
+  display: none;
 }
 
 .dropdown {
+  display: block;
   animation: cartadded 3s ease-in-out forwards;
+
 }
 
 .samph {
@@ -535,15 +539,35 @@ margin-top: 10px;
   position: relative;
 }
 
+.bought{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: none;
+  cursor: pointer;
+}
+
+.bought::after{
+  content: "X";
+  position: absolute;
+  font-size: 20px;
+  font-weight: bolder;
+  left: 96%;
+  top: 3%;
+  cursor: pointer;
+}
+
 .cartimgh {
   display: flex;
   align-items: center;
   margin-left: 40px;
   width: 200px;
+  padding: 5px;
 }
 
 .cartdesc {
-  /* padding-top: 30px; */
   margin: auto 0;
 }
 
@@ -929,7 +953,8 @@ margin-top: 10px;
   }
 
   .navulba {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
   }
 

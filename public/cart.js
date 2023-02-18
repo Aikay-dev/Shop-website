@@ -89,16 +89,13 @@ arrconv.forEach(function (elem) {
 
     let subtcash = exclose.querySelector("#cumlcash").innerHTML;
     const defnum = parseInt(subtcash.replace(/,/g, ""));
-    console.log(defnum);
     let totfex = document.querySelector(".totalcash").innerHTML;
     const defnum2 = parseInt(totfex.replace(/,/g, ""));
-    console.log(defnum2);
     let finalcalc = defnum2 - defnum;
     let readytot = finalcalc.toLocaleString();
     document.querySelector(".totalcash").innerHTML = readytot;
     let cansubt = document.querySelector(".subt").innerHTML;
     const defnum3 = parseInt(cansubt.replace(/,/g, ""));
-    console.log(defnum3);
     let subcalc = defnum3 - defnum;
     let readysub = subcalc.toLocaleString();
     document.querySelector(".subt").innerHTML = readysub;
@@ -155,11 +152,8 @@ let allmonconv = Array.from(allmon);
 let subdarr = [];
 let ship = document.querySelector(".shipper").innerHTML;
 
-console.log(ship);
-
 function cartstart() {
   numconv.forEach(function (elem) {
-    console.log(allmonconv);
     const defcash = elem.querySelector(".money").innerHTML;
     const defnum = parseInt(defcash.replace(/,/g, ""));
     const defval = elem.querySelector(".cartnum").value;
@@ -173,7 +167,6 @@ function cartstart() {
     let firstval = allmonconv[i].innerHTML;
     const defnum = parseInt(firstval.replace(/,/g, ""));
     subdarr.push(defnum);
-    console.log(defnum);
   }
 
   let sum = 0;
@@ -182,7 +175,6 @@ function cartstart() {
   }
   document.querySelector(".subt").innerHTML = sum.toLocaleString();
 
-  console.log(finaldata);
   document.querySelector(".shipper").innerHTML = parseInt(
     finaldata.length * 1300
   ).toLocaleString();
@@ -192,7 +184,6 @@ function cartstart() {
 
   document.querySelector(".subt").value =
     document.querySelector(".subt").innerHTML;
-  console.log(document.querySelector(".subt").value);
 
   let subtv = document.querySelector(".subt").value;
   let shipv = document.querySelector(".shipper").value;
@@ -206,10 +197,54 @@ function cartstart() {
 
 cartstart();
 
+/* listen for change in cart */
 numconv.forEach(function (elem) {
   elem.addEventListener("change", function () {
-    
-  });
+    let allmon = document.querySelectorAll("#cumlcash");
+    let allmonconv = Array.from(allmon);
+    let subdarr = [];
+    let ship = document.querySelector(".shipper").innerHTML;
 
-  
+    const defval = elem.querySelector(".cartnum").value;
+    const defcash = elem.querySelector("#defcash").innerHTML;
+    const defcashnum = parseInt(defcash.replace(/,/g, ""));
+    let defvalnum = +defval;
+    let precalc = defcashnum * defvalnum;
+    elem.querySelector("#cumlcash").innerHTML = precalc.toLocaleString();
+    let defnum;
+    for (let i = 0; i < allmonconv.length; i++) {
+      let firstval = allmonconv[i].innerHTML;
+      defnum = parseInt(firstval.replace(/,/g, ""));
+      subdarr.push(defnum);
+    }
+
+    let sum = 0;
+    for (let i = 0; i < subdarr.length; i++) {
+      sum += subdarr[i];
+    }
+    document.querySelector(".subt").innerHTML = sum.toLocaleString();
+    let totcash = document.querySelector(".totalcash").innerHTML;
+    let defnum3 = parseInt(totcash.replace(/,/g, ""));
+    let subredo = document.querySelector(".subt").innerHTML;
+    let defnum4 = parseInt(subredo.replace(/,/g, ""));
+    let shipper = document.querySelector(".shipper").innerHTML;
+    let defnum5 = parseInt(shipper.replace(/,/g, ""));
+    let chnfinal = defnum5 + defnum4;
+    let finalchanger = chnfinal.toLocaleString();
+    document.querySelector(".totalcash").innerHTML = finalchanger;
+  });
+});
+
+const cartcheck = document.querySelector(".cartcheck");
+const bought = document.querySelector(".bought");
+cartcheck.addEventListener("click", () => {
+  bought.style.display = "block";
+  const parentElement = document.querySelector(".bought");
+  parentElement.addEventListener("click", function (event) {
+    if (event.target.matches(".bought::after")) {
+      bought.style.display = "none";
+    } else {
+      bought.style.display = "none";
+    }
+  });
 });
