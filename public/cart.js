@@ -76,6 +76,7 @@ let thelast = document.querySelector(".totalsec");
 clbt.addEventListener("click", async function () {
   cphones.forEach((d) => d.classList.add("remcart"));
   await new Promise((resolve) => setTimeout(resolve, 500));
+  cphones.forEach((d) => d.remove());
   target.remove();
   tester.classList.add("forcpage");
   thelast.classList.add("remcart2");

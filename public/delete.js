@@ -89,7 +89,7 @@ for (let i = 0; i < samdata.length; i++) {
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >REMOVE ITEM<i class="fa-solid fa-cart-plus"></i></p>
   </div>
   </div>`;
 
