@@ -38,14 +38,19 @@ if (localStorage.getItem("cartData") === null || finaldata == "") {
     </div>
     <div class="cartdesc">
         <div class = "deschol">
-            <p class = "cartpname">${appname}</p>
-            <p class="priceca">
-                <span>₦</span><span class="money" id = "defcash">${appprice}</span>
+            <div class = "cnamecont"><p class = "cartpname">${appname}</p></div>
+            <div class = "cpricecont"><p class="priceca">
+            <span>₦</span><span class="money" id = "defcash">${appprice}</span>
             </p>
+            </div>
+            <div class = "cinpcont">
             <input class ="cartnum" type = "number" value = "1"></input>
+            </div>
+            <div class = "cumlcont">
             <p class="tprice">
                 <span>₦</span><span class="money" id = "cumlcash">${appprice}</span>
             </p>
+            </div>
             
         </div>
         <div class = "ex"><i class="fa-regular fa-circle-xmark hidex"></i></div>
@@ -102,7 +107,7 @@ arrconv.forEach(function (elem) {
     let shipdel = document.querySelector(".shipper").innerHTML;
     const defnum4 = parseInt(shipdel.replace(/,/g, ""));
     let delnew = defnum4 - 1300;
-    document.querySelector(".shipper").innerHTML = delnew;
+    document.querySelector(".shipper").innerHTML = delnew.toLocaleString();
 
     defdataset = this.dataset.value;
 
