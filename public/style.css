@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(245,245,245);
+  background-color: rgb(245, 245, 245);
 }
 
 .navone {
@@ -34,8 +34,6 @@ body {
   display: none;
   cursor: pointer;
 }
-
-
 
 .bar {
   display: block;
@@ -78,7 +76,6 @@ body {
 .dropdown {
   display: block;
   animation: cartadded 3s ease-in-out forwards;
-
 }
 
 .samph {
@@ -89,7 +86,7 @@ body {
   justify-content: center;
 }
 
-.wrongpass{
+.wrongpass {
   background-color: rgb(243, 168, 168);
 }
 
@@ -97,11 +94,11 @@ body {
   height: 58px;
 }
 
-.appsectext{
+.appsectext {
   background-color: white;
   padding: 0 30px;
   border-radius: 20px;
-  background-color: rgb(195,222,240);
+  background-color: rgb(195, 222, 240);
 }
 
 .secnames {
@@ -112,27 +109,26 @@ body {
 }
 
 .fullbanholder {
-  background-color: rgb(29,29,27);
+  background-color: rgb(29, 29, 27);
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.appsec{
+.appsec {
   background-image: url(./apple-1-logo-png-transparent.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.samsec{
+.samsec {
   background-image: url(./original-samsung-logo-10.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .appphones {
-
   border-radius: 5px;
   height: 320px;
   min-width: 250px;
@@ -149,14 +145,12 @@ body {
   box-shadow: 0px 0px 5px grey;
 }
 
-
-
 .iphnbanhol {
   background-color: black;
 }
 
 .fullbanholder {
-  background-color: rgb(29,29,27);
+  background-color: rgb(29, 29, 27);
 }
 
 .appph {
@@ -195,10 +189,10 @@ body {
 }
 
 .samsec {
-margin-top: 10px;
+  margin-top: 10px;
 }
 
-#samid{
+#samid {
   margin-top: 10px;
 }
 
@@ -323,7 +317,7 @@ margin-top: 10px;
   border-top-right-radius: 20px;
 }
 
-.formcont{
+.formcont {
   width: 400px;
   background-color: rgb(255, 255, 255);
   height: 500px;
@@ -333,37 +327,36 @@ margin-top: 10px;
   box-shadow: 0px 0px 10px grey;
 }
 
-.fhead{
+.fhead {
   text-align: center;
 }
 
-.fem{
+.fem {
   margin: 50px 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-.fpas{
+.fpas {
   margin: 50px 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-.filform:focus::placeholder{
+.filform:focus::placeholder {
   color: transparent;
 }
 
-.filform{
+.filform {
   height: 40px;
   border: none;
   border-bottom: 1px solid black;
   outline: none;
-  
 }
 
-.forbut{
+.forbut {
   display: flex;
   padding: 5px 100px;
   border-radius: 10px;
@@ -372,29 +365,27 @@ margin-top: 10px;
   height: 80%;
   position: absolute;
   cursor: pointer;
-
 }
 
-.surr::before{
+.surr::before {
   content: "";
   height: 500px;
   width: 50px;
   background-color: red;
-  animation: turn 2s linear  infinite;
-  
+  animation: turn 2s linear infinite;
 }
 
 @keyframes turn {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
 
-  100%{
+  100% {
     transform: rotate(359deg);
   }
 }
 
-.surr{
+.surr {
   background-color: rgb(99, 212, 240);
   border-radius: 13px;
   width: 245px;
@@ -440,7 +431,7 @@ margin-top: 10px;
 
 .addcart {
   text-align: right;
-  border: 3px solid rgb(195,222,240);
+  border: 3px solid rgb(195, 222, 240);
   padding: 15px 30px;
   display: flex;
   justify-content: center;
@@ -453,7 +444,7 @@ margin-top: 10px;
 }
 
 .addcart:hover {
-  background-color: rgb(195,222,240);
+  background-color: rgb(195, 222, 240);
   color: rgb(27, 27, 27);
 }
 
@@ -538,7 +529,7 @@ margin-top: 10px;
   position: relative;
 }
 
-.bought{
+.bought {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -548,7 +539,7 @@ margin-top: 10px;
   cursor: pointer;
 }
 
-.bought::after{
+.bought::after {
   content: "X";
   position: absolute;
   font-size: 20px;
@@ -578,8 +569,6 @@ margin-top: 10px;
   padding-left: 20px;
 }
 
-
-
 .unit {
   margin-left: 90px;
 }
@@ -589,7 +578,6 @@ margin-top: 10px;
   width: 40px;
   outline: none;
 }
-
 
 .ex {
   margin-left: 65%;
@@ -606,7 +594,7 @@ margin-top: 10px;
   scale: 1.07;
 }
 
-.grid-container>div{
+.grid-container > div {
   border-radius: 10px;
 }
 
@@ -622,7 +610,7 @@ margin-top: 10px;
 .item1 {
   grid-row: 1 / 3;
   grid-column: 1 / 3;
-  background-image: url('./long\ color.gif');
+  background-image: url("./long\ color.gif");
   background-size: cover;
   background-position: center;
 }
@@ -630,7 +618,7 @@ margin-top: 10px;
 .item2 {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
-  background-image: url('./Nokia-XR20-IIHF.webp');
+  background-image: url("./Nokia-XR20-IIHF.webp");
   background-size: cover;
   background-position: center;
 }
@@ -638,7 +626,7 @@ margin-top: 10px;
 .item3 {
   grid-row: 2 / 3;
   grid-column: 3 / 4;
-  background-image: url('./promo1.jpg');
+  background-image: url("./promo1.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -646,7 +634,7 @@ margin-top: 10px;
 .item4 {
   grid-row: 1 / 2;
   grid-column: 4 / 5;
-  background-image: url('./promo3.jpg');
+  background-image: url("./promo3.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -654,15 +642,10 @@ margin-top: 10px;
 .item5 {
   grid-row: 2 / 3;
   grid-column: 4 / 5;
-  background-image: url('./promo2.jpg');
+  background-image: url("./promo2.jpg");
   background-size: cover;
   background-position: center;
 }
-
-
-
-
-
 
 .remcart {
   animation: slideout 1s 0.1s ease-out forwards;
@@ -690,13 +673,13 @@ margin-top: 10px;
   background-color: red;
 }
 
-.iphonehome{
+.iphonehome {
   display: flex;
   align-items: center;
   justify-content: center;
   background-repeat: repeat;
   background-size: contain;
-  background-color: rgb(195,222,240);
+  background-color: rgb(195, 222, 240);
 }
 
 .red {
@@ -711,13 +694,13 @@ margin-top: 10px;
   background-position: center;
 }
 
-.cpage{
+.cpage {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.cpage > div{
+.cpage > div {
   border: none;
   border-radius: 10px;
 }
@@ -726,21 +709,21 @@ margin-top: 10px;
   height: 100%;
 }
 
-.cnamecont{
+.cnamecont {
   height: 100%;
   width: 200px;
   display: flex;
   align-items: center;
 }
 
-.cpricecont{
+.cpricecont {
   width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cinpcont{
+.cinpcont {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -752,7 +735,7 @@ margin-top: 10px;
   padding: 0 50px;
 }
 
-.cumlcont{
+.cumlcont {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -797,7 +780,6 @@ margin-top: 10px;
   margin: 40px 0;
   font-weight: bolder;
   font-size: 25px;
- 
 }
 
 .cartcheck {
@@ -819,13 +801,12 @@ margin-top: 10px;
 }
 
 @keyframes cards {
-  from{
-    scale: 1.0;
+  from {
+    scale: 1;
   }
 
-  to{
+  to {
     scale: 1.01;
-    
   }
 }
 
@@ -871,10 +852,7 @@ margin-top: 10px;
     margin: 0 auto;
     justify-content: left;
   }
-
 }
-
-
 
 @media screen and (max-width: 1030px) {
   .cartsec {
@@ -907,8 +885,6 @@ margin-top: 10px;
     width: 100vw;
   }
 
-  
-
   .deschol {
     flex-direction: column;
   }
@@ -917,26 +893,25 @@ margin-top: 10px;
     margin: 10px;
   }
 
-  .cinpcont{
+  .cinpcont {
     justify-content: left;
     padding-left: 10px;
   }
 
-  .cpricecont{
+  .cpricecont {
     justify-content: left;
     padding-left: 10px;
   }
 
-  .cumlcont{
+  .cumlcont {
     justify-content: left;
     padding-left: 10px;
   }
 
-  .cinpcont{
+  .cinpcont {
     justify-content: left;
     padding-left: 20px;
   }
-
 
   .tprice {
     margin: 10px;
@@ -965,16 +940,15 @@ margin-top: 10px;
     padding: 10px;
   }
 
-  .grid-container{
+  .grid-container {
     height: 350px;
   }
 }
 
 @media screen and (max-width: 790px) {
-  .fullbanholder>img {
+  .fullbanholder > img {
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 690px) {
@@ -989,20 +963,21 @@ margin-top: 10px;
     flex-direction: column;
   }
 
-  .bought, .bought>img{
+  .bought,
+  .bought > img {
     width: 95%;
   }
 
-  .grid-container{
+  .grid-container {
     height: 300px;
   }
 
-  .bought>img{
+  .bought > img {
     display: flex;
     margin: auto;
   }
 
-  .bought::after{
+  .bought::after {
     content: "X";
     position: absolute;
     font-size: 20px;
@@ -1114,7 +1089,7 @@ margin-top: 10px;
     padding-top: 10px;
   }
 
-  .grid-container{
+  .grid-container {
     height: 250px;
   }
 
@@ -1127,7 +1102,7 @@ margin-top: 10px;
     padding-bottom: 25px;
   }
 
-  .fullbanholder>img {
+  .fullbanholder > img {
     height: 150px;
   }
 
@@ -1242,7 +1217,7 @@ margin-top: 10px;
     width: 300px;
   }
 
-  .formcont{
+  .formcont {
     width: 95%;
   }
 
@@ -1260,7 +1235,6 @@ margin-top: 10px;
 
   .carttot {
     margin-bottom: 10px;
-    
   }
 
   .prdt {
@@ -1291,7 +1265,7 @@ margin-top: 10px;
   }
 }
 
-.fullbanholder>img {
+.fullbanholder > img {
   height: 120px;
 }
 
@@ -1300,21 +1274,19 @@ margin-top: 10px;
 }
 
 @media screen and (max-width: 400px) {
-
-  .appph{
+  .appph {
     gap: 5px;
     padding: 10px 0;
   }
 
-  .samph{
+  .samph {
     gap: 5px;
     padding: 10px 0;
   }
 
-  .appphones{
+  .appphones {
     width: 300px;
   }
-  
 }
 
 @media screen and (max-width: 370px) {
@@ -1322,22 +1294,18 @@ margin-top: 10px;
     height: 120px;
   }
 
-  .appfullsec{
+  .appfullsec {
     gap: 10px;
     padding: 10px 0;
   }
-
-  
 }
 
 @media screen and (max-width: 350px) {
-  .samfullsec{
+  .samfullsec {
     width: 100%;
     gap: 2px;
     padding: 10px 0px;
   }
-
-
 }
 
 @media screen and (max-width: 330px) {
@@ -1346,11 +1314,11 @@ margin-top: 10px;
     width: 100%;
   }
 
-  .forbut{
+  .forbut {
     width: 95%;
   }
 
-  .surr{
+  .surr {
     width: 90%;
   }
 }
