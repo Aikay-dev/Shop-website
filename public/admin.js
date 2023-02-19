@@ -23,9 +23,10 @@ firebase.initializeApp(firebaseConfig);
 const emailAuthProvider = firebase.auth.EmailAuthProvider;
 
 const form = document.querySelector(".formcont");
+let formbut = document.querySelector(".forbut").innerHTML
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  document.querySelector(".forbut").innerHTML = "Authorizing"
   let email = form.email.value;
   let password = form.password.value;
 
@@ -44,5 +45,6 @@ form.addEventListener("submit", (e) => {
       let boxes2 = document.querySelector(".ha");
       boxes.classList.add("wrongpass");
       boxes2.classList.add("wrongpass");
+      document.querySelector(".forbut").innerHTML = "Login"
     });
 });
