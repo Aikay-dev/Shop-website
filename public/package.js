@@ -21,6 +21,15 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+  /* checks if a user is authenticated */
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user && user.email == "emmanese2020@gmail.com"){
+        console.log("current user:", user)
+    }else{
+        window.location.href = "./admin-auth.html"
+    }
+  })
+
 /* getting the storage */
 const storage = firebase.storage();
 const database = firebase.database();

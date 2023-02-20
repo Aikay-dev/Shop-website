@@ -18,7 +18,19 @@ const firebaseConfig = {
   measurementId: "G-CLNF0CJQEJ",
 };
 
+
+
 firebase.initializeApp(firebaseConfig);
+
+  /* checks if a user is authenticated */
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user && user.email == "emmanese2020@gmail.com"){
+        console.log("current user:", user)
+        window.location.href = "./product-management.html"
+    }else{
+        window.location.href = "./admin-auth.html"
+    }
+  })
 
 const emailAuthProvider = firebase.auth.EmailAuthProvider;
 
