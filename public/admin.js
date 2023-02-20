@@ -27,8 +27,6 @@ firebase.initializeApp(firebaseConfig);
     if(user && user.email == "emmanese2020@gmail.com"){
         console.log("current user:", user)
         window.location.href = "./product-management.html"
-    }else{
-        window.location.href = "./admin-auth.html"
     }
   })
 
