@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 .navone {
   padding: 20px;
   width: 100%;
-  background-color: black;
+  background-color: rgb(15, 16, 22);
   color: white;
   display: flex;
   z-index: 6;

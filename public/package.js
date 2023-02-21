@@ -50,6 +50,8 @@ form.addEventListener("submit", async (e) => {
   ) {
     alert("fill in the empty boxes");
   } else {
+    let strform = form.price.value
+    let pricefinal = strform.toLocaleString()
     if (form.category.value == "iphone") {
       const iphRefdata = database.ref("iphones");
 
@@ -72,7 +74,7 @@ form.addEventListener("submit", async (e) => {
 
         ref2.set({
           0: downloadURL,
-          1: form.price.value,
+          1: pricefinal,
           2: form.name.value,
         });
         form.reset();
@@ -102,7 +104,7 @@ form.addEventListener("submit", async (e) => {
 
         ref2.set({
           0: downloadURL,
-          1: form.price.value,
+          1: pricefinal,
           2: form.name.value,
         });
 
