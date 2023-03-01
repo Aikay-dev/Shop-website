@@ -73,6 +73,13 @@ body {
   display: none;
 }
 
+.bookndname{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookndname
+
 .dropdown {
   display: block;
   animation: cartadded 3s ease-in-out forwards;
@@ -111,7 +118,7 @@ body {
 
 .appphones {
   border-radius: 5px;
-  height: 350px;
+  height: 360px;
   min-width: 250px;
   max-width: 250px;
   position: relative;
@@ -248,8 +255,10 @@ body {
 
 .delcart {
   text-align: right;
-  background-color: rgb(255, 0, 0);
-  padding: 15px 30px;
+  background-color: red;
+  color: white;
+  padding: 20px 30px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,12 +266,8 @@ body {
   margin: 0 auto;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bolder;
-  white-space: nowrap;
-}
-
-.delcart:hover {
-  background-color: red;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .inpo {

@@ -55,7 +55,7 @@ for (let i = 0; i < iphdata.length; i++) {
   let appprice = iphdata[i][1];
   let appname = iphdata[i][2];
 
-  let boiler = `<div class="appphones">
+/*   let boiler = `<div class="appphones">
   <img src="${appimage}">
   <div class="prdet">
       <p>${appname}</p>
@@ -64,8 +64,21 @@ for (let i = 0; i < iphdata.length; i++) {
       </p>
       <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >REMOVE ITEM<i class="fa-solid fa-cart-plus"></i></p>
   </div>
-  </div>`;
+  </div>`; */
 
+  let boiler = `<div class="appphones">
+  <div class ="imgdiv">
+    <img src="${appimage}">
+  </div>
+  <div class="prdet">
+      <p class = "cat">category: iphone</p>
+      <p class = "cat2">${appname}</p>
+      <p class="price">
+          <span>₦ </span><span class="money">${appprice}</span>
+      </p>
+      <p class="delcart" data-value = "${appimage}''${appname}''${appprice}" >Remove item</p>
+  </div>
+  </div>`;
   document.querySelector(".prdt").innerHTML += boiler;
 }
 
@@ -91,14 +104,17 @@ for (let i = 0; i < samdata.length; i++) {
   let appprice = samdata[i][1];
   let appname = samdata[i][2];
 
-  let boiler = `<div class="appphones">
-  <img src="${appimage}">
+let boiler = `<div class="appphones">
+  <div class ="imgdiv">
+    <img src="${appimage}">
+  </div>
   <div class="prdet">
-      <p>${appname}</p>
+      <p class = "cat">category: Samsung</p>
+      <p class = "cat2">${appname}</p>
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >REMOVE ITEM<i class="fa-solid fa-cart-plus"></i></p>
+      <p class="delcart" data-value = "${appimage}''${appname}''${appprice}" >Remove item</p>
   </div>
   </div>`;
 

@@ -52,7 +52,10 @@ for (let i = 0; i < samdata.length; i++) {
   </div>
   <div class="prdet">
       <p class = "cat">category: Samsung</p>
+      <div class = "bookndname">
       <p class = "cat2">${appname}</p>
+      <i class="bookhold"><i class="fa-regular fa-bookmark bookndicon"></i></i>
+      </div>
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
@@ -80,31 +83,49 @@ arrconv.forEach(function (elem) {
       red.classList.toggle("dropdown");
 
       let dataFromLocal = localStorage.getItem("cartData");
-      if (dataFromLocal === null) {
-        cartstore.push(arr);
-        localStorage.setItem("cartData", JSON.stringify(cartstore));
+      if (this.classList.contains("green")) {
+        this.innerHTML = "Added to cart"
+        if (dataFromLocal === null) {
+          cartstore.push(arr);
+          localStorage.setItem("cartData", JSON.stringify(cartstore));
+        } else {
+          const jsonString = localStorage.getItem("cartData");
+          const myData = JSON.parse(jsonString);
+          myData.push(arr);
+          localStorage.setItem("cartData", JSON.stringify(myData));
+        }
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       } else {
+        this.innerHTML = "Add to cart"
         const jsonString = localStorage.getItem("cartData");
         const myData = JSON.parse(jsonString);
-        myData.push(arr);
+        const index = myData.findIndex((arr) => arr[0] === arr[0]);
+        if (index == -1) {
+        } else {
+          myData.splice(index, 1);
+        }
         localStorage.setItem("cartData", JSON.stringify(myData));
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       }
-      await new Promise((resolve) => setTimeout(resolve, 2500));
-      red.classList.toggle("dropdown");
-    } else {
-      let green = document.querySelector(".confirmout");
-      green.classList.toggle("dropdown");
-
-      const jsonString = localStorage.getItem("cartData");
-      const myData = JSON.parse(jsonString);
-      const index = myData.findIndex((arr) => arr[0] === arr[0]);
-      if (index == -1) {
-      } else {
-        myData.splice(index, 1);
-      }
-      localStorage.setItem("cartData", JSON.stringify(myData));
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      green.classList.toggle("dropdown");
     }
   });
 });
+
+/* wish list */
+
+document.querySelectorAll(".bookhold").forEach((e) => {
+  e.addEventListener('click', () => {
+    
+    if(e.classList.contains("animate__bounce")){
+      e.style.color = "none"
+      e.classList.remove("animate__animated");
+      e.classList.remove("animate__bounce");
+      e.innerHTML = `<i class="fa-regular fa-bookmark bookndicon"></i>`
+    }else{
+    e.style.color = 'green'
+    e.innerHTML = `<i class="fa-solid fa-bookmark"></i>`
+    e.classList.add("animate__animated");
+    e.classList.add("animate__bounce");
+    }
+  })
+})
