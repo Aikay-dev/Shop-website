@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -94,13 +94,6 @@ body {
   height: 58px;
 }
 
-.appsectext {
-  background-color: white;
-  padding: 0 30px;
-  border-radius: 20px;
-  background-color: rgb(195, 222, 240);
-}
-
 .secnames {
   text-align: center;
   font-weight: bolder;
@@ -116,28 +109,33 @@ body {
   justify-content: center;
 }
 
-.appsec {
-  background-image: url(./apple-1-logo-png-transparent.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.samsec {
-  background-image: url(./original-samsung-logo-10.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .appphones {
   border-radius: 5px;
-  height: 320px;
+  height: 350px;
   min-width: 250px;
   max-width: 250px;
   position: relative;
-  padding: 10px;
-  padding-bottom: 25px;
+  padding: 10px 0;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.cat{
+  color: rgb(88, 88, 88);
+  font-size: 11px;
+}
+
+.prdet{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .appphones:hover {
@@ -204,24 +202,18 @@ body {
   width: 100%;
   padding: 20px;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(./NicePng_samsung-logo-png_23376.png);
 }
 
 .appfullsec {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("./SeekPng.com_apple-logo-png_97323.png");
 }
 
 .navhref {
@@ -375,15 +367,7 @@ body {
   animation: turn 2s linear infinite;
 }
 
-@keyframes turn {
-  0% {
-    transform: rotate(0deg);
-  }
 
-  100% {
-    transform: rotate(359deg);
-  }
-}
 
 .surr {
   background-color: rgb(99, 212, 240);
@@ -406,13 +390,24 @@ body {
   color: white;
 }
 
-.appphones > img,
-.samphones > img {
-  position: relative;
-  height: 80%;
-  width: 100%;
+
+.imgdiv{
+  min-height: 70%;
+  max-height: 70%;
+  width: 230px;
+  display: flex;
+  justify-content: center;
 }
 
+.cat2{
+  font-size: 13px;
+}
+
+.imgdiv > img{
+  min-height: auto;
+  max-width: 100%;
+  min-width: auto;
+}
 .samphones {
   border: 1px solid rgb(153, 151, 151);
   height: 300px;
@@ -427,12 +422,15 @@ body {
 
 .price {
   font-weight: bolder;
+  font-size: 12px;
 }
 
 .addcart {
   text-align: right;
-  border: 3px solid rgb(195, 222, 240);
-  padding: 15px 30px;
+  background-color: black;
+  color: white;
+  padding: 20px 30px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -440,16 +438,16 @@ body {
   margin: 0 auto;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bolder;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .addcart:hover {
-  background-color: rgb(195, 222, 240);
-  color: rgb(27, 27, 27);
+  background-color: rgb(41, 41, 41);
 }
 
 .green {
-  background-color: rgb(155, 203, 235);
+  background-color: rgb(41, 41, 41);
 }
 
 .sambanner {
@@ -673,15 +671,6 @@ body {
   background-color: red;
 }
 
-.iphonehome {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-repeat: repeat;
-  background-size: contain;
-  background-color: rgb(195, 222, 240);
-}
-
 .red {
   background-color: red;
 }
@@ -825,6 +814,16 @@ body {
 
   100% {
     top: 0%;
+  }
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
   }
 }
 
@@ -1080,6 +1079,19 @@ body {
   .fullbanholder > img {
     width: 100%;
   }
+
+  .appphones {
+    height: 280px;
+    min-width: 180px;
+    max-width: 180px;
+    font-size: 15px;
+  }
+
+  .imgdiv{
+    width: 160px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -1199,6 +1211,7 @@ body {
 
   .prdet {
     font-size: 10px;
+  
   }
 
   .samfullsec {

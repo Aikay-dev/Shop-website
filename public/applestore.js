@@ -47,13 +47,16 @@ for (let i = 0; i < iphdata.length; i++) {
   let appname = iphdata[i][2];
 
   let boiler = `<div class="appphones">
-  <img src="${appimage}">
+  <div class ="imgdiv">
+    <img src="${appimage}">
+  </div>
   <div class="prdet">
-      <p>${appname}</p>
+      <p class = "cat">category: iphone</p>
+      <p class = "cat2">${appname}</p>
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >ADD TO CART<i class="fa-solid fa-cart-plus"></i></p>
+      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >Add to cart</p>
   </div>
   </div>`;
 
