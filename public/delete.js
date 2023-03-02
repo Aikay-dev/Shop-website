@@ -55,17 +55,6 @@ for (let i = 0; i < iphdata.length; i++) {
   let appprice = iphdata[i][1];
   let appname = iphdata[i][2];
 
-/*   let boiler = `<div class="appphones">
-  <img src="${appimage}">
-  <div class="prdet">
-      <p>${appname}</p>
-      <p class="price">
-          <span>₦ </span><span class="money">${appprice}</span>
-      </p>
-      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >REMOVE ITEM<i class="fa-solid fa-cart-plus"></i></p>
-  </div>
-  </div>`; */
-
   let boiler = `<div class="appphones">
   <div class ="imgdiv">
     <img src="${appimage}">
@@ -76,7 +65,7 @@ for (let i = 0; i < iphdata.length; i++) {
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="delcart" data-value = "${appimage}''${appname}''${appprice}" >Remove item</p>
+      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >Remove item</p>
   </div>
   </div>`;
   document.querySelector(".prdt").innerHTML += boiler;
@@ -114,7 +103,7 @@ let boiler = `<div class="appphones">
       <p class="price">
           <span>₦ </span><span class="money">${appprice}</span>
       </p>
-      <p class="delcart" data-value = "${appimage}''${appname}''${appprice}" >Remove item</p>
+      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >Remove item</p>
   </div>
   </div>`;
 
@@ -123,12 +112,8 @@ let boiler = `<div class="appphones">
 
 let arr;
 
-const cartbut = document.querySelectorAll(".delcart");
-let arrconv = Array.from(cartbut);
-arrconv.forEach(function (elem) {
+const cartbut = document.querySelectorAll(".delcart").forEach(function (elem) {
   elem.addEventListener("click", async () => {
-    let green = document.querySelector(".confirmout");
-    green.classList.toggle("dropdown");
     let cardd = elem.getAttribute("data-value");
     arr = cardd.split("''");
     /* const itemRef = firebase.database().ref('image/123'); */

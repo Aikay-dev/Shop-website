@@ -1,5 +1,9 @@
 const hamburger = document.querySelector(".hamburger");
 const navflow = document.querySelector(".navul");
+let lockdata = localStorage.getItem("cartData")
+let parsedLock = JSON.parse(lockdata)
+
+
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
@@ -69,6 +73,11 @@ for (let i = 0; i < iphonestore.length; i++) {
   </div>
   </div>`;
 
+  for(let element of parsedLock){
+    if(element[1] === appname){
+      console.log("yes sir", element[1])
+    }
+  }
   document.querySelector(".appph").innerHTML += boiler;
 }
 
