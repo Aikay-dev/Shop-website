@@ -73,11 +73,6 @@ for (let i = 0; i < iphonestore.length; i++) {
   </div>
   </div>`;
 
-  for(let element of parsedLock){
-    if(element[1] === appname){
-      console.log("yes sir", element[1])
-    }
-  }
   document.querySelector(".appph").innerHTML += boiler;
 }
 

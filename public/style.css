@@ -603,9 +603,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
   height: 400px;
   padding: 10px;
 }
