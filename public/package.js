@@ -50,6 +50,9 @@ form.addEventListener("submit", async (e) => {
   ) {
     alert("fill in the empty boxes");
   } else {
+    document.querySelector(".subbut").innerHTML = `<svg viewBox="25 25 50 50" class="svg">
+    <circle r="20" cy="50" cx="50"></circle>
+  </svg>`
     let strform = form.price.value
     let pricefinal = strform.toLocaleString()
     if (form.category.value == "iphone") {
@@ -78,6 +81,8 @@ form.addEventListener("submit", async (e) => {
           2: form.name.value,
         });
         form.reset();
+        document.querySelector(".subbut").innerHTML = 'Submit'
+
       } catch (error) {
         console.error(error);
         alert("Failed to upload the image");

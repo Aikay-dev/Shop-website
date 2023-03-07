@@ -289,6 +289,7 @@ body {
 }
 
 .picform {
+  width: 700px;
   margin: 0px auto;
   padding: 30px;
   display: flex;
@@ -296,15 +297,7 @@ body {
   gap: 20px;
 }
 
-.subbut {
-  padding: 20px;
-  margin: 0 290px 0 290px;
-  cursor: pointer;
-}
 
-.subbut:focus {
-  margin: rgb(90, 89, 89);
-}
 
 .cartsec {
   width: 1000px;
@@ -794,6 +787,81 @@ body {
   margin-bottom: 10px;
 }
 
+svg {
+ width: 3.25em;
+ transform-origin: center;
+ animation: rotate4 2s linear infinite;
+}
+
+circle {
+ fill: none;
+ stroke: hsl(214, 97%, 59%);
+ stroke-width: 2;
+ stroke-dasharray: 1, 200;
+ stroke-dashoffset: 0;
+ stroke-linecap: round;
+ animation: dash4 1.5s ease-in-out infinite;
+}
+
+.subbut {
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725AC1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725AC1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725AC1;
+}
+
+.subbut:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+.subbut:active {
+  transform: scale(0.9);
+}
+
+.svg{
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+
+
+
+@keyframes rotate4 {
+ 100% {
+  transform: rotate(360deg);
+ }
+}
+
+@keyframes dash4 {
+ 0% {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+ }
+
+ 50% {
+  stroke-dasharray: 90, 200;
+  stroke-dashoffset: -35px;
+ }
+
+ 100% {
+  stroke-dashoffset: -125px;
+ }
+}
+
+
 @keyframes cards {
   from {
     scale: 1;
@@ -932,20 +1000,21 @@ body {
 
 @media screen and (max-width: 850px) {
   .inpi {
-    width: 500px;
-  }
-
-  .picform {
     width: 100%;
   }
 
-  .subbut {
-    margin: 0 120px;
-    padding: 10px;
+  .picform {
+    width: 700px;
+
   }
 
   .grid-container {
     height: 350px;
+  }
+
+  .prdt{
+    align-items: center;
+    display: flex;
   }
 }
 
@@ -1016,15 +1085,6 @@ body {
   .cartimgh {
     margin: 0;
     width: 100px;
-  }
-
-  .inpi {
-    width: 300px;
-  }
-
-  .subbut {
-    margin: 0 20px;
-    padding: 10px;
   }
 }
 
@@ -1140,10 +1200,6 @@ body {
     border-radius: 5px;
     font-weight: bolder;
     white-space: nowrap;
-  }
-
-  .inpi {
-    width: 200px;
   }
 }
 
@@ -1343,5 +1399,9 @@ body {
 
   .surr {
     width: 90%;
+  }
+
+  .picform{
+    width: 100%;
   }
 }
