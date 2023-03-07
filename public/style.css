@@ -409,7 +409,7 @@ body {
 }
 
 .imgdiv > img{
-  min-height: auto;
+  height: auto;
   max-width: 100%;
   min-width: auto;
 }
@@ -1096,6 +1096,7 @@ body {
     width: 160px;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 }
 
