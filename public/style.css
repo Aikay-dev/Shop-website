@@ -1086,7 +1086,7 @@ body {
   }
 
   .appphones {
-    height: 320px;
+    height: 340px;
     min-width: 180px;
     max-width: 180px;
     font-size: 15px;
@@ -1097,6 +1097,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .imgdiv > img{
+    max-height: 100%;
   }
 }
 
