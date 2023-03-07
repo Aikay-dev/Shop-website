@@ -255,13 +255,13 @@ cartcheck.addEventListener("click", () => {
   });
 });
 
-let coupbod = document.querySelector(".coupbod")
-let coupbutt = document.querySelector(".coupbutt")
+let coupbod = document.querySelector(".coupbod");
+let coupbutt = document.querySelector(".coupbutt");
 
 coupbutt.addEventListener("click", () => {
-  if(coupbod.value === 'starthub'){
-    document.querySelector(".totalcash").innerHTML = "1,000"
-  }else{
-    coupbod.style.border = '1px solid red'
+  if (coupbod.value === "starthub") {
+    document.querySelector(".totalcash").innerHTML = "1,000";
+  } else {
+    coupbod.style.border = "1px solid red";
   }
-})
+});

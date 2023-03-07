@@ -21,14 +21,14 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-  /* checks if a user is authenticated */
-  firebase.auth().onAuthStateChanged(function(user){
-    if(user && user.email == "emmanese2020@gmail.com"){
-        console.log("current user:", user)
-    }else{
-        window.location.href = "./admin-auth.html"
-    }
-  })
+/* checks if a user is authenticated */
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user && user.email == "emmanese2020@gmail.com") {
+    console.log("current user:", user);
+  } else {
+    window.location.href = "./admin-auth.html";
+  }
+});
 
 const storage = firebase.storage();
 const database = firebase.database();
@@ -93,7 +93,7 @@ for (let i = 0; i < samdata.length; i++) {
   let appprice = samdata[i][1];
   let appname = samdata[i][2];
 
-let boiler = `<div class="appphones">
+  let boiler = `<div class="appphones">
   <div class ="imgdiv">
     <img src="${appimage}">
   </div>

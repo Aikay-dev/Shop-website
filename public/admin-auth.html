@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login</title>
-    <link rel = "icon" href = 
-"./Lovepik_com-400246866-shop.png" 
-        type = "image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="icon"
+      href="./Lovepik_com-400246866-shop.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navone">
-        <p>SHOP</p>
-        <ul class="navul">
-            <a href="./index.html" class="navhref"><li class="navli">HOME</li></a>
-            <a href="./cart.html" class="navhref"><li class="navli" >CART</li></a>
-            <a href="./admin-auth.html" class="navhref"><li class="navli">ADMIN</li></a>
-        </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+      <p>SHOP</p>
+      <ul class="navul">
+        <a href="./index.html" class="navhref"><li class="navli">HOME</li></a>
+        <a href="./cart.html" class="navhref"><li class="navli">CART</li></a>
+        <a href="./admin-auth.html" class="navhref"
+          ><li class="navli">ADMIN</li></a
+        >
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </nav>
     <div class="faker"></div>
     <div class="faker"></div>
-        <form action="" class="formcont">
-            <h1 class="fhead">Login</h1>
-            <div class="fem">
-                <label for="">EMAIL</label>
-                <input type="text" name="email" placeholder="Put your Email here" class="filform">
-            </div>
-            <div class="fpas">
-                <label for="">PASSWORD</label>
-                <input type="password" name="password" placeholder="Put your Password here" class="filform ha">
-            </div>
-            <div class="surr">
-                <button class="forbut">Login</button>
-            </div>
-        </form>
-        <script src="./admin.js"></script>
-</body>
+    <form action="" class="formcont">
+      <h1 class="fhead">Login</h1>
+      <div class="fem">
+        <label for="">EMAIL</label>
+        <input
+          type="text"
+          name="email"
+          placeholder="Put your Email here"
+          class="filform"
+        />
+      </div>
+      <div class="fpas">
+        <label for="">PASSWORD</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Put your Password here"
+          class="filform ha"
+        />
+      </div>
+      <div class="surr">
+        <button class="forbut">Login</button>
+      </div>
+    </form>
+    <script src="./admin.js"></script>
+  </body>
 </html>

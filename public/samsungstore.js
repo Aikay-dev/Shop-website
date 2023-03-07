@@ -84,7 +84,7 @@ arrconv.forEach(function (elem) {
 
       let dataFromLocal = localStorage.getItem("cartData");
       if (this.classList.contains("green")) {
-        this.innerHTML = "Added to cart"
+        this.innerHTML = "Added to cart";
         if (dataFromLocal === null) {
           cartstore.push(arr);
           localStorage.setItem("cartData", JSON.stringify(cartstore));
@@ -96,7 +96,7 @@ arrconv.forEach(function (elem) {
         }
         await new Promise((resolve) => setTimeout(resolve, 3000));
       } else {
-        this.innerHTML = "Add to cart"
+        this.innerHTML = "Add to cart";
         const jsonString = localStorage.getItem("cartData");
         const myData = JSON.parse(jsonString);
         const index = myData.findIndex((arr) => arr[0] === arr[0]);
@@ -114,18 +114,17 @@ arrconv.forEach(function (elem) {
 /* wish list */
 
 document.querySelectorAll(".bookhold").forEach((e) => {
-  e.addEventListener('click', () => {
-    
-    if(e.classList.contains("animate__bounce")){
-      e.style.color = "none"
+  e.addEventListener("click", () => {
+    if (e.classList.contains("animate__bounce")) {
+      e.style.color = "none";
       e.classList.remove("animate__animated");
       e.classList.remove("animate__bounce");
-      e.innerHTML = `<i class="fa-regular fa-bookmark bookndicon"></i>`
-    }else{
-    e.style.color = 'green'
-    e.innerHTML = `<i class="fa-solid fa-bookmark"></i>`
-    e.classList.add("animate__animated");
-    e.classList.add("animate__bounce");
+      e.innerHTML = `<i class="fa-regular fa-bookmark bookndicon"></i>`;
+    } else {
+      e.style.color = "green";
+      e.innerHTML = `<i class="fa-solid fa-bookmark"></i>`;
+      e.classList.add("animate__animated");
+      e.classList.add("animate__bounce");
     }
-  })
-})
+  });
+});
