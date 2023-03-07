@@ -23,12 +23,23 @@ firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
 const database = firebase.database();
+let samcont = document.querySelector(".samfullsec");
+
+for (let i = 0; i < 10; i++) {
+  samcont.innerHTML += `<div class="card">
+<div class="card__image"></div>
+<div class="card__content">
+  <h2 class="defh"></h2>
+  <p class="defp"></p>
+</div>`;
+}
 
 /* Getting samsung data from database */
 const samRefdata = database.ref("samsung");
 const snapshot = await samRefdata.once("value");
 let samdata = snapshot.val();
 
+samcont.innerHTML = "";
 /* Shuffle using fisher yates method */
 
 function shuffle(array) {

@@ -24,12 +24,33 @@ firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
 const database = firebase.database();
+let applecont = document.querySelector(".appph");
+let samcont = document.querySelector(".samph");
+
+for (let i = 0; i < 5; i++) {
+  applecont.innerHTML += `<div class="card">
+<div class="card__image"></div>
+<div class="card__content">
+  
+  <p class="defp"></p>
+  <h2 class="defh"></h2>
+</div>`;
+  samcont.innerHTML += `<div class="card">
+<div class="card__image"></div>
+<div class="card__content">
+
+  <p class="defp"></p>
+  <h2 class="defh"></h2>
+</div>`;
+}
 
 /* Getting iphone data from database */
 const iphRefdata = database.ref("iphones");
 const snapshot = await iphRefdata.once("value");
 let iphdata = snapshot.val();
 
+applecont.innerHTML = "";
+samcont.innerHTML = "";
 /* Shuffle using fisher yates method */
 
 function shuffle(array) {
