@@ -210,7 +210,6 @@ numconv.forEach(function (elem) {
     let allmonconv = Array.from(allmon);
     let subdarr = [];
     let ship = document.querySelector(".shipper").innerHTML;
-
     const defval = elem.querySelector(".cartnum").value;
     const defcash = elem.querySelector("#defcash").innerHTML;
     const defcashnum = parseInt(defcash.replace(/,/g, ""));

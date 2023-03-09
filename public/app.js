@@ -1,3 +1,4 @@
+/* Mobile hamburger */
 const hamburger = document.querySelector(".hamburger");
 const navflow = document.querySelector(".navul");
 let lockdata = localStorage.getItem("cartData");
@@ -22,27 +23,50 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+/* Initialize Firebase Features */
 const storage = firebase.storage();
 const database = firebase.database();
+
 let applecont = document.querySelector(".appph");
 let samcont = document.querySelector(".samph");
 
-for (let i = 0; i < 5; i++) {
-  applecont.innerHTML += `<div class="card">
-<div class="card__image"></div>
-<div class="card__content">
-  
-  <p class="defp"></p>
-  <h2 class="defh"></h2>
-</div>`;
-  samcont.innerHTML += `<div class="card">
-<div class="card__image"></div>
-<div class="card__content">
+/* Preload cards */
 
-  <p class="defp"></p>
-  <h2 class="defh"></h2>
-</div>`;
+const cardLoader = (container) => {
+  return (container.innerHTML += `<div class="card">
+  <div class="card__image"></div>
+  <div class="card__content">
+    
+    <p class="defp"></p>
+    <h2 class="defh"></h2>
+  </div>`);
+};
+
+for (let i = 0; i < 5; i++) {
+  cardLoader(applecont);
+  cardLoader(samcont);
 }
+
+const boiler = (appimage, appname, appprice, selector, category) => {
+  const boiler = `<div class="appphones">
+  <div class ="imgdiv">
+    <img src="${appimage}">
+  </div>
+  <div class="prdet">
+      <p class = "cat">category: ${category}</p>
+      <div class = "bookndname">
+      <p class = "cat2">${appname}</p>
+      <i class="bookhold"><i class="fa-regular fa-bookmark bookndicon"></i></i>
+      </div>
+      <p class="price">
+          <span>₦ </span><span class="money">${appprice}</span>
+      </p>
+      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >Add to cart</p>
+  </div>
+  </div>`;
+
+  return (document.querySelector(selector).innerHTML += boiler);
+};
 
 /* Getting iphone data from database */
 const iphRefdata = database.ref("iphones");
@@ -51,8 +75,8 @@ let iphdata = snapshot.val();
 
 applecont.innerHTML = "";
 samcont.innerHTML = "";
-/* Shuffle using fisher yates method */
 
+/* Shuffle using fisher yates method */
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -75,24 +99,7 @@ for (let i = 0; i < iphonestore.length; i++) {
   let appprice = iphonestore[i][1];
   let appname = iphonestore[i][2];
 
-  let boiler = `<div class="appphones">
-  <div class ="imgdiv">
-    <img src="${appimage}">
-  </div>
-  <div class="prdet">
-      <p class = "cat">category: iphone</p>
-      <div class = "bookndname">
-      <p class = "cat2">${appname}</p>
-      <i class="bookhold"><i class="fa-regular fa-bookmark bookndicon"></i></i>
-      </div>
-      <p class="price">
-          <span>₦ </span><span class="money">${appprice}</span>
-      </p>
-      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >Add to cart</p>
-  </div>
-  </div>`;
-
-  document.querySelector(".appph").innerHTML += boiler;
+  boiler(appimage, appname, appprice, ".appph", "iphone");
 }
 
 /* samsung section */
@@ -126,24 +133,7 @@ for (let i = 0; i < samsungstore.length; i++) {
   let appprice = samsungstore[i][1];
   let appname = samsungstore[i][2];
 
-  let boiler = `<div class="appphones">
-  <div class ="imgdiv">
-    <img src="${appimage}">
-  </div>
-  <div class="prdet">
-      <p class = "cat">category: Samsung</p>
-      <div class = "bookndname">
-      <p class = "cat2">${appname}</p>
-      <i class="bookhold"><i class="fa-regular fa-bookmark bookndicon"></i></i>
-      </div>
-      <p class="price">
-          <span>₦ </span><span class="money">${appprice}</span>
-      </p>
-      <p class="addcart" data-value = "${appimage}''${appname}''${appprice}" >Add to cart</p>
-  </div>
-  </div>`;
-
-  document.querySelector(".samph").innerHTML += boiler;
+  boiler(appimage, appname, appprice, ".samph", "samsung");
 }
 
 /* Making the add to cart button */

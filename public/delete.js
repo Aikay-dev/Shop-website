@@ -49,12 +49,7 @@ function shuffle(array) {
 }
 shuffle(iphdata);
 
-/* Reading from array and inserting into inner html */
-for (let i = 0; i < iphdata.length; i++) {
-  let appimage = iphdata[i][0];
-  let appprice = iphdata[i][1];
-  let appname = iphdata[i][2];
-
+const boiler = (appimage, appname, appprice) => {
   let boiler = `<div class="appphones">
   <div class ="imgdiv">
     <img src="${appimage}">
@@ -68,7 +63,17 @@ for (let i = 0; i < iphdata.length; i++) {
       <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >Remove item</p>
   </div>
   </div>`;
-  document.querySelector(".prdt").innerHTML += boiler;
+
+  return (document.querySelector(".prdt").innerHTML += boiler);
+};
+
+/* Reading from array and inserting into inner html */
+for (let i = 0; i < iphdata.length; i++) {
+  let appimage = iphdata[i][0];
+  let appprice = iphdata[i][1];
+  let appname = iphdata[i][2];
+
+  boiler(appimage, appname, appprice);
 }
 
 /* Getting samsung data from database */
@@ -93,21 +98,7 @@ for (let i = 0; i < samdata.length; i++) {
   let appprice = samdata[i][1];
   let appname = samdata[i][2];
 
-  let boiler = `<div class="appphones">
-  <div class ="imgdiv">
-    <img src="${appimage}">
-  </div>
-  <div class="prdet">
-      <p class = "cat">category: Samsung</p>
-      <p class = "cat2">${appname}</p>
-      <p class="price">
-          <span>₦ </span><span class="money">${appprice}</span>
-      </p>
-      <p class="delcart" data-value = "${appimage}''${appprice}''${appname}" >Remove item</p>
-  </div>
-  </div>`;
-
-  document.querySelector(".prdt").innerHTML += boiler;
+  boiler(appimage, appname, appprice);
 }
 
 let arr;

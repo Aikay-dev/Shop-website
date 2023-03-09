@@ -25,7 +25,6 @@ firebase.initializeApp(firebaseConfig);
   /* checks if a user is authenticated */
   firebase.auth().onAuthStateChanged(function(user){
     if(user && user.email == "emmanese2020@gmail.com"){
-        console.log("current user:", user)
         window.location.href = "./product-management.html"
     }
   })
@@ -51,6 +50,7 @@ form.addEventListener("submit", (e) => {
       // Handle errors
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorMessage, errorCode);
       let boxes = document.querySelector(".filform");
       let boxes2 = document.querySelector(".ha");
       boxes.classList.add("wrongpass");
