@@ -1057,6 +1057,63 @@ circle {
   .fullbanholder > img {
     width: 100%;
   }
+  .iphnbanhol > img {
+    height: 200px;
+  }
+
+  .fullbanholder2 {
+    height: 150px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    height: 500px;
+    padding: 10px;
+  }
+  
+  .item1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+    background-image: url("./long\ color.gif");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item2 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    background-image: url("./Nokia-XR20-IIHF.webp");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item3 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background-image: url("./promo1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item4 {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    background-image: url("./promo3.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .item5 {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    background-image: url("./promo2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
 }
 
 @media screen and (max-width: 690px) {
@@ -1077,7 +1134,7 @@ circle {
   }
 
   .grid-container {
-    height: 300px;
+    height: 400px;
   }
 
   .bought > img {
@@ -1257,7 +1314,7 @@ circle {
     padding: 10px 25px;
   }
 }
-
+/* 
 @media screen and (max-width: 490px) {
   .iphnbanhol > img {
     height: 200px;
@@ -1296,7 +1353,7 @@ circle {
     grid-column: 4 / 4;
     order: 1;
   }
-}
+} */
 
 @media screen and (max-width: 450px) {
   .fullbanholder > img {

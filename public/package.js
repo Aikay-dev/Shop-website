@@ -117,7 +117,9 @@ form.addEventListener("submit", async (e) => {
         document.querySelector(".confirm").classList.add("dropdown");
         await new Promise((resolve) => setTimeout(resolve, 2500));
         document.querySelector(".confirm").classList.remove("dropdown");
-
+        document.querySelector(
+          ".subbut"
+        ).innerHTML = "Submit"
         form.reset();
       } catch (error) {
         console.error(error);
