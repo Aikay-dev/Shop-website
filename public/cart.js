@@ -84,11 +84,13 @@ clbt.addEventListener("click", async function () {
   finaldata = [];
   localStorage.setItem("cartData", JSON.stringify(finaldata));
 });
+
 let cartbut = document.querySelectorAll(".hidex");
 let culfirst = document.querySelectorAll("#cumlcash");
 let defdataset;
 let arrconv = Array.from(cartbut);
 let cartbox = document.querySelector(".cpage");
+/* Delete per item */
 arrconv.forEach(function (elem) {
   elem.addEventListener("click", async function () {
     let exclose = elem.closest(".cartdesc");
@@ -97,7 +99,7 @@ arrconv.forEach(function (elem) {
     const defnum = parseInt(subtcash.replace(/,/g, ""));
     let totfex = document.querySelector(".totalcash").innerHTML;
     const defnum2 = parseInt(totfex.replace(/,/g, ""));
-    let finalcalc = defnum2 - defnum;
+    let finalcalc = defnum2 - defnum - 1300;
     let readytot = finalcalc.toLocaleString();
     document.querySelector(".totalcash").innerHTML = readytot;
     let cansubt = document.querySelector(".subt").innerHTML;
@@ -240,6 +242,7 @@ numconv.forEach(function (elem) {
   });
 });
 
+/* Buy Something */
 const cartcheck = document.querySelector(".cartcheck");
 const bought = document.querySelector(".bought");
 cartcheck.addEventListener("click", () => {
@@ -257,6 +260,7 @@ cartcheck.addEventListener("click", () => {
 let coupbod = document.querySelector(".coupbod");
 let coupbutt = document.querySelector(".coupbutt");
 
+/* coupon */
 coupbutt.addEventListener("click", () => {
   if (coupbod.value === "starthub") {
     document.querySelector(".totalcash").innerHTML = "1,000";
